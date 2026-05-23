@@ -1844,7 +1844,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
         slug: "it-consultancy",
         title: "Expert IT Consultancy Services | Tech Solutions for Business",
         shortTitle: "Consultancy",
-        subtitle: "Professional IT Consultancy Services for Modern Businesses",
+        subtitle: "Looking for reliable IT consultancy? We provide expert network support, system integration, and custom tech solutions to scale your business. Get a free consultation!",
         description:
           "Technology strategy, digital transformation, vendor selection, audits and CTO-as-a-Service for SMEs and enterprises.",
         icon: "Briefcase",
@@ -1853,14 +1853,6 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
         overview: [
           "Choosing the wrong stack, vendor or architecture costs years and crores. Our consultants — former CTOs, architects and security leaders — help you choose the right path with vendor-neutral, evidence-backed advice.",
           "Engagements range from one-day workshops to fractional CTO partnerships. Outputs include strategy documents, RFPs, vendor scorecards, architecture diagrams and quarterly board updates.",
-              whyChooseUsTitle: "Why Your Business Needs Expert Tech Consulting", // Why chose us serction.
-      whyChooseUsDescription: "To protect the digital backbone of your business, we go beyond basic maintenance by utilizing high-level engineering and real-time monitoring to ensure peak system performance. Our core mission is to eliminate downtime and provide ironclad security for your critical data.",
-      whyChooseUs: [
-    { title: "Proactive System Support", description: "We monitor and resolve network issues before they ever disrupt your daily operations." },
-    { title: "Scalable Architecture", description: "We design robust, future-proof tech frameworks built to grow seamlessly alongside your company." },
-    { title: "Maximum Performance", description: "We streamline your technology stack to ensure lightning-fast speeds and optimal operational efficiency." }
-  ],
-          featuresHeading: "End-to-End Server Administration & Managed Infrastructure Solutions", // ফিচার টাইটেল
         ],
         features: [
           {
