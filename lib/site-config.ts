@@ -18,10 +18,10 @@ export const SITE_CONFIG = {
   phone: "+880 1515-676635",
   whatsapp: "+880 1515-676635",
   address: {
-    line1: "Level 7, Corporate Tower",
-    line2: "Gulshan Avenue",
+    line1: "67, Motijheel C/A",
+    line2: "(Nearest Metro Station)",
     city: "Dhaka",
-    postalCode: "1212",
+    postalCode: "1000",
     country: "Bangladesh",
   },
   workingHours: "Sun – Thu, 9:00 AM – 6:00 PM",

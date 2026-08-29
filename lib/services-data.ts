@@ -21,53 +21,54 @@ export type FAQ = {
   answer: string
 }
 
+export type WhyChooseUsItem = {
+  title: string
+  description: string
+}
+
+export type ServiceStat = {
+  label: string
+  value: string
+}
+
 export type Service = {
   slug: string
   title: string
-  shortTitle: string
-  subtitle: string
-  description: string // meta description
-  icon: string
-  heroImage: string
-  overviewTitle: string
-  overview: string[]
-  featuresHeading: string
-  features: ServiceFeature[]
-  benefits: string[]
-  process: ProcessStep[]
-  faqs: FAQ[]
-  ctaTitle: string
-  ctaDescription: string
+  shortTitle?: string
+  subtitle?: string
+  description?: string
+  icon?: string
+  heroImage?: string
+  overviewTitle?: string
+  overview?: string[]
+  featuresHeading?: string
+  features?: ServiceFeature[]
+  benefits?: string[]
+  process?: ProcessStep[]
+  faqs?: FAQ[]
+  ctaTitle?: string
+  ctaDescription?: string
+  whyChooseUsTitle?: string
+  whyChooseUsDescription?: string
+  whyChooseUs?: WhyChooseUsItem[]
+  stats?: ServiceStat[]
 }
+
+
+
+
 
 export type ServiceCategory = {
   slug: string
   title: string
-  shortTitle: string
-  subtitle: string
-  description: string
-  icon: string
-  heroImage: string
-  intro: string
+  shortTitle?: string
+  subtitle?: string
+  description?: string
+  icon?: string
+  heroImage?: string
+  intro?: string
   services: Service[]
 }
-
-export type WhyChooseUsItem = {
-  title: string;
-  description: string;
-};
-
-export type Service = {
-  slug: string;
-  title: string;
-  whyChooseUsTitle?: string;       // সেকশনের মেইন টাইটেল
-  whyChooseUsDescription?: string; // সেকশনের ছোট বর্ণনা
-  whyChooseUs?: WhyChooseUsItem[]; // ৩-৪টি কারণের লিস্ট
-};
-
-
-
-
 
 export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
   // =========================================================
@@ -75,9 +76,9 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
   // =========================================================
   "digital-infrastructure": {
     slug: "digital-infrastructure",
-    title: "Digital Infrastructure",
+    title: "Enterprise Digital Infrastructure, Cloud Hosting & Domain Solutions in Bangladesh",
     shortTitle: "Infrastructure",
-    subtitle: "The foundation your business runs on",
+    subtitle: "High-speed BDIX cloud hosting, official .BD domain registration, Google Workspace corporate email, and enterprise cyber defense for Bangladeshi businesses.",
     description:
       "Domain registration, corporate email, cloud hosting and SSL security services for businesses across Bangladesh.",
     icon: "Server",
@@ -87,9 +88,9 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
     services: [
       {
         slug: "domain-services",
-        title: "Official .bd Domain Registration, Corporate BTCL Services for Global Brands",
+        title: "Official .BD Domain Registration & Corporate BTCL Services in Bangladesh",
         shortTitle: "Domains",
-        subtitle: "Register, transfer and manage your business domains",
+        subtitle: "Register, transfer, and protect your .bd, .com.bd, and global corporate domains with automated DNS management and proactive renewal security.",
         description:
           "Register .bd, .com.bd, .com and global domains with DNS management, privacy protection and 24/7 support.",
         icon: "Globe",
@@ -200,9 +201,9 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
       },
       {
         slug: "corporate-email",
-        title: "Professional Corporate Email Solutions in Bangladesh",
+        title: "Enterprise Corporate Email Hosting & Google Workspace Solutions in Bangladesh",
         shortTitle: "Email",
-        subtitle: "Secure, scalable, and professional business email infrastructure tailored to keep your enterprise communication reliable and productive.",
+        subtitle: "Custom-domain business email hosting with Google Workspace, Microsoft 365, spam filtering, and local BDT invoicing for enterprise teams.",
         description:
           "Business email hosting with you@yourcompany.com, calendar, contacts and enterprise security.",
         icon: "Mail",
@@ -316,9 +317,9 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
       },
       {
         slug: "cloud-hosting",
-        title: "High-Performance Enterprise Cloud Hosting",
+        title: "High-Speed Managed Cloud Hosting & NVMe SSD Infrastructure in Bangladesh",
         shortTitle: "Hosting",
-        subtitle: "Scale your mission-critical applications with secure, lightning-fast infrastructure built for the modern enterprise.",
+        subtitle: "Scale your mission-critical applications with lightning-fast BDIX peering, NVMe SSD storage, and guaranteed 99.9% uptime SLA.",
         description:
           "Managed cloud hosting on AWS, DigitalOcean, Vercel and our local Bangladesh data centers.",
         icon: "Cloud",
@@ -430,9 +431,9 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
       },
       {
         slug: "ssl-security",
-        title: "Secure Your Website with Premium SSL Certificates in Bangladesh",
+        title: "Enterprise SSL Certificates, Web Application Firewall & DDoS Defense in Bangladesh",
         shortTitle: "Security",
-        subtitle: "Protect user data, boost search engine rankings, and build instant trust with industry-leading SSL encryption solutions.",
+        subtitle: "Protect transactions and user data with bank-grade SSL/TLS encryption, automated Cloudflare WAF, and 24/7 cyber threat mitigation.",
         description:
           "SSL certificates, web application firewalls, DDoS protection and security audits.",
         icon: "ShieldCheck",
@@ -543,6 +544,109 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
         ctaDescription:
           "Talk to a security engineer for a free SSL and WAF assessment.",
       },
+      {
+        slug: "vps-hosting",
+        title: "High-Performance Linux & Windows VPS Hosting in Bangladesh",
+        shortTitle: "VPS Hosting",
+        subtitle: "Dedicated vCPU, NVMe SSD storage, full root access, and local BDIX connectivity for mission-critical enterprise workloads.",
+        description:
+          "Managed and unmanaged Linux & Windows VPS servers in Dhaka and global data centers with NVMe SSD, DDoS protection, and 99.9% SLA.",
+        icon: "Server",
+        heroImage: "/images/services/cloud-hosting.jpg",
+        overviewTitle: "Enterprise-Grade Virtual Private Servers (VPS) with BDIX Speed",
+        overview: [
+          "Virtual Private Servers (VPS) give your business dedicated compute resources — vCPU cores, RAM, and ultra-fast NVMe storage — without the noise or limitations of shared web hosting. Corporate.bd provides high-performance VPS solutions hosted in Tier-3 Dhaka data centers with BDIX peering as well as global cloud locations.",
+          "Whether you need an unmanaged Linux VPS for custom software development or a fully managed Windows VPS with cPanel/Plesk and automated daily snapshots, our infrastructure guarantees 99.9% uptime and local BDT invoicing with NBR VAT compliance.",
+        ],
+        whyChooseUsTitle: "Why Choose Corporate.bd for VPS Hosting in Bangladesh?",
+        whyChooseUsDescription: "Uncompromising server performance, local BDIX connectivity, and dedicated 24/7 technical support.",
+        whyChooseUs: [
+          { title: "Guaranteed Compute Resources", description: "Hardware-level KVM virtualization ensures your allocated vCPU cores, RAM, and NVMe SSD space are 100% reserved for your workload." },
+          { title: "Local BDIX & Low Latency", description: "Hosted in Dhaka data centers with direct BDIX peering for sub-10ms response times across all internet service providers in Bangladesh." },
+          { title: "Full Root & Admin Control", description: "Complete root access via SSH or GUI access via RDP with your choice of Ubuntu, AlmaLinux, Debian, CentOS, or Windows Server." },
+        ],
+        featuresHeading: "Enterprise Features Included with Every VPS Server",
+        features: [
+          {
+            title: "NVMe SSD RAID-10 Storage",
+            description: "Next-gen enterprise NVMe storage arrays delivering blazing fast I/O operations for heavy database queries.",
+            icon: "HardDrive",
+          },
+          {
+            title: "KVM Hardware Virtualization",
+            description: "True hardware virtualization isolating your environment for maximum stability and zero neighbor interference.",
+            icon: "Cpu",
+          },
+          {
+            title: "BDIX & Global Bandwidth",
+            description: "Ultra-high speed BDIX connectivity for local traffic along with redundant multi-gigabit international transit.",
+            icon: "Network",
+          },
+          {
+            title: "Automated Snapshots & Backups",
+            description: "Automated weekly and daily server snapshots with one-click full system disaster recovery.",
+            icon: "DatabaseBackup",
+          },
+          {
+            title: "Hardware DDoS Mitigation",
+            description: "Multi-layered network firewalls blocking malicious DDoS traffic, port scans, and brute-force attacks.",
+            icon: "ShieldCheck",
+          },
+          {
+            title: "Fully Managed or Self-Managed",
+            description: "Choose self-managed or let our certified system engineers handle cPanel setup, security hardening, and OS patches.",
+            icon: "Wrench",
+          },
+        ],
+        benefits: [
+          "Sub-10ms response latency for Bangladeshi users via BDIX",
+          "100% dedicated vCPU and RAM allocation with zero overselling",
+          "Free initial server setup and data migration from cPanel/Plesk",
+          "Local payment through bKash, Nagad, bank transfer & NBR Mushak 6.3 invoices",
+        ],
+        process: [
+          {
+            step: "01",
+            title: "Sizing & OS Selection",
+            description: "Select your vCPU cores, RAM, NVMe disk, and preferred OS (Ubuntu, AlmaLinux, Windows).",
+          },
+          {
+            step: "02",
+            title: "Instant Provisioning",
+            description: "Automated server deployment with root credentials delivered securely to your dashboard.",
+          },
+          {
+            step: "03",
+            title: "Security & Control Panel",
+            description: "Configure firewalls, install cPanel/CyberPanel/Plesk, and harden SSH ports.",
+          },
+          {
+            step: "04",
+            title: "24/7 Monitoring & Scaling",
+            description: "Our system engineers monitor uptime around the clock and scale resources seamlessly when needed.",
+          },
+        ],
+        faqs: [
+          {
+            question: "What is the difference between Shared Hosting and VPS Hosting?",
+            answer: "Shared hosting shares CPU and RAM with hundreds of other websites. VPS hosting isolates your virtual server with dedicated vCPU and RAM, giving you root access and consistent performance even during heavy traffic spikes.",
+          },
+          {
+            question: "Is your VPS hosted inside Bangladesh with BDIX?",
+            answer: "Yes! We offer local Tier-3 Dhaka data center VPS hosting with direct BDIX connectivity for sub-10ms latency across Bangladesh, as well as global locations in Singapore, USA, and Europe.",
+          },
+          {
+            question: "Do you offer Fully Managed VPS support?",
+            answer: "Yes, our Fully Managed VPS option includes cPanel/CyberPanel installation, web server optimization, firewall configuration, OS security patching, and automated daily backups.",
+          },
+          {
+            question: "Can I upgrade my VPS resources without losing data?",
+            answer: "Absolutely. You can scale vCPU cores, RAM, and NVMe storage online at any time with minimal downtime and zero data loss.",
+          },
+        ],
+        ctaTitle: "Deploy your high-performance VPS today",
+        ctaDescription: "Get dedicated vCPU compute power, NVMe speed, and local BDIX peering backed by 24/7 expert support.",
+      },
     ],
   },
 
@@ -551,9 +655,9 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
   // =========================================================
   "web-development": {
     slug: "web-development",
-    title: "Web Development",
-    shortTitle: "Web Dev",
-    subtitle: "Websites and applications that grow your business",
+    title: "Enterprise Web Development, Custom Software & SaaS Engineering in Bangladesh",
+    shortTitle: "Software & Web",
+    subtitle: "Custom corporate web design, Next.js web applications, scalable e-commerce systems, ERP/CRM software, and headless CMS development in Dhaka, Bangladesh.",
     description:
       "Custom corporate websites, e-commerce platforms, web applications and CMS solutions built with modern stacks.",
     icon: "Code2",
@@ -563,9 +667,9 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
     services: [
       {
         slug: "corporate-websites",
-        title: "Corporate website development in Bangladesh",
+        title: "Bespoke Corporate Website Design & Web Development Company in Bangladesh",
         shortTitle: "Corporate Sites",
-        subtitle: "We build fast, secure, and modern business websites that elevate your brand's digital presence. Transform your corporate identity with state-of-the-art web solutions designed to convert visitors into clients.",
+        subtitle: "Build high-converting, mobile-first, and ultra-fast business websites powered by Next.js and headless CMS to elevate brand authority and lead generation.",
         description:
           "Bespoke corporate websites built on Next.js with CMS, SEO and performance optimization.",
         icon: "Building2",
@@ -677,9 +781,9 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
       },
       {
         slug: "ecommerce-solutions",
-        title: "Build Your Online Empire with Our Ecommerce Solution",
+        title: "Full-Featured E-Commerce Website Development & Payment Gateway Integration in Bangladesh",
         shortTitle: "E-commerce",
-        subtitle: "Online stores built to scale and sell",
+        subtitle: "Launch high-converting, mobile-first online stores with native bKash, Nagad, SSLCommerz checkout, automated courier fulfillment, and multi-channel inventory sync.",
         description:
           "Shopify, WooCommerce and custom e-commerce platforms with local payment gateways and logistics.",
         icon: "ShoppingCart",
@@ -792,9 +896,9 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
       },
       {
         slug: "custom-web-apps",
-        title: "Custom Web Application Development in Bangladesh",
+        title: "Enterprise Custom Web Application & Cloud Software Engineering in Bangladesh",
         shortTitle: "Web Apps",
-        subtitle: "Scale your business operations with tailor-made, secure, and high-performance custom web applications. Expert developers in Bangladesh for enterprise-grade solutions.",
+        subtitle: "Scale your business operations with tailor-made, secure, and high-performance custom web applications engineered with Next.js, Node.js, and Python.",
         description:
           "ERP, CRM, SaaS, dashboards and workflow tools built on Next.js, Node.js, Laravel and Python.",
         icon: "AppWindow",
@@ -906,9 +1010,9 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
       },
       {
         slug: "cms-management",
-        title: "Professional CMS Management: You Create, We Manage the Rest",
+        title: "Managed CMS Solutions, Headless Architecture & WordPress Maintenance in Bangladesh",
         shortTitle: "CMS",
-        subtitle: "Managed CMS Solutions in Bangladesh, WordPress, Joomla & Drupal",
+        subtitle: "High-performance WordPress, headless Sanity, and Strapi CMS development with automated security patches, speed tuning, and zero editor friction.",
         description:
           "Stop worrying about technical updates or security patches. Get a high-performance Content Management System that gives you the power to update your site in seconds.",
         icon: "FileEdit",
@@ -1019,6 +1123,514 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
         ctaDescription:
           "Free CMS audit and improvement plan within 48 hours.",
       },
+      {
+        slug: "custom-erp-crm",
+        title: "Enterprise Custom ERP & CRM Software Development Company in Bangladesh",
+        shortTitle: "ERP & CRM",
+        subtitle: "Architect bespoke ERP and CRM systems tailored to your exact business workflow with zero per-user licensing fees, automated sales pipelines, and executive dashboards.",
+        description:
+          "Tailored ERP and CRM systems that streamline operations, automate sales funnels, and centralize company data.",
+        icon: "Database",
+        heroImage: "/images/services/custom-web-apps.jpg",
+        overviewTitle: "Enterprise ERP & CRM Tailored to Your Business Goals",
+        overview: [
+          "Generic off-the-shelf software forces your enterprise into rigid boxes. Our custom ERP and CRM solutions are architected around your exact organizational structure, supply chain, and sales workflows.",
+          "From multi-department resource allocation to pipeline management and real-time executive analytics, we build secure, scalable enterprise software.",
+        ],
+        whyChooseUsTitle: "Why Leading Enterprises Choose Our Custom ERP & CRM Solutions",
+        whyChooseUsDescription: "Built with modern frameworks like Next.js, Node.js, and PostgreSQL, our solutions scale effortlessly without expensive user license seats.",
+        whyChooseUs: [
+          { title: "Zero Per-Seat Licensing Fees", description: "Own your platform completely. Scale from 10 to 10,000 employees without paying recurring SaaS license costs." },
+          { title: "Deep Local & Global Integration", description: "Seamlessly connect with local banking, VAT/TIN compliance, SMS gateways, and global cloud infrastructure." },
+          { title: "Ironclad Security & Audit Logs", description: "Role-based access controls, automated encrypted backups, and comprehensive audit logs for governance." }
+        ],
+        featuresHeading: "Core Capabilities of Our Custom ERP & CRM Platform",
+        features: [
+          { title: "Pipeline & Lead Management", description: "Automated lead tracking, deal stages, and conversion analytics.", icon: "Target" },
+          { title: "Resource & Task Allocation", description: "Cross-department project tracking, milestones, and workload balancing.", icon: "Layers" },
+          { title: "Custom BI & Reporting", description: "Real-time executive dashboards with PDF and Excel export capabilities.", icon: "BarChart3" },
+          { title: "Automated Communication", description: "Email and WhatsApp trigger workflows for client engagement.", icon: "Mail" },
+        ],
+        benefits: [
+          "Complete code and data ownership",
+          "Automated sales and operations workflows",
+          "Role-based security with audit trail",
+          "24/7 dedicated enterprise SLA support",
+        ],
+        process: [
+          { step: "01", title: "Workflow Mapping", description: "In-depth analysis of your current operational bottlenecks." },
+          { step: "02", title: "Architecture Design", description: "Database schema, security specs, and UI wireframes." },
+          { step: "03", title: "Agile Build", description: "Iterative sprint deployments with end-user feedback loops." },
+          { step: "04", title: "Deployment & Training", description: "On-premise or cloud hosting setup and staff training." },
+        ],
+        faqs: [
+          { question: "Can you migrate data from our existing legacy system?", answer: "Yes, we handle complete data extraction, cleaning, and migration from legacy SQL, Excel, or older ERP systems." },
+          { question: "Where will our enterprise data be hosted?", answer: "You can choose cloud hosting (AWS, GCP, Azure) or secure on-premise servers within Bangladesh." },
+        ],
+        ctaTitle: "Transform Your Enterprise Operations",
+        ctaDescription: "Schedule an architecture consultation with our senior enterprise software architects.",
+      },
+      {
+        slug: "hr-payroll",
+        title: "Automated HR & Payroll Management Software Solutions in Bangladesh",
+        shortTitle: "HR & Payroll",
+        subtitle: "Automate biometric attendance, employee shift rosters, salary disbursement, festival bonuses, and NBR tax compliance with 100% precision.",
+        description:
+          "End-to-end HR and payroll automation software customized for Bangladeshi corporate and factory compliance.",
+        icon: "Users",
+        heroImage: "/images/services/custom-web-apps.jpg",
+        overviewTitle: "Streamline Human Capital & Compliant Payroll Processing",
+        overview: [
+          "Managing employee attendance, shift rosters, leave calculations, festival bonuses, and tax deductions manually creates administrative overhead and risk.",
+          "Our HR & Payroll platform automates attendance biometric sync, salary slips, provident fund, gratuity, and NBR tax certificates effortlessly.",
+        ],
+        whyChooseUsTitle: "Why Corporate HR Leaders Trust Our Payroll System",
+        whyChooseUsDescription: "Engineered specifically for Bangladesh labor laws and tax regulations, supporting corporate offices and large manufacturing plants alike.",
+        whyChooseUs: [
+          { title: "Bangladesh Labor Law Compliant", description: "Built-in calculations for overtime, festival bonus, provident fund, and income tax slabs." },
+          { title: "Biometric & Mobile Check-In", description: "Direct integration with ZKAccess, Hikvision biometric devices, and geo-fenced mobile attendance." },
+          { title: "Automate Bank Salary Disbursal", description: "One-click generation of bank advice letters and bKash/Nagad salary disbursement files." }
+        ],
+        featuresHeading: "Comprehensive HR & Payroll Automation Features",
+        features: [
+          { title: "Employee Self-Service Portal", description: "Staff can request leave, download pay slips, and submit tax documents.", icon: "UserCheck" },
+          { title: "Automated Tax Calculation", description: "Instant tax slab calculation and NBR Form 108 report generation.", icon: "Calculator" },
+          { title: "Shift & Roster Management", description: "Flexible shift scheduling for offices, factories, and remote teams.", icon: "Clock" },
+          { title: "Performance Evaluation", description: "KPI tracking, quarterly reviews, and appraisal management.", icon: "Award" },
+        ],
+        benefits: [
+          "90% reduction in monthly payroll processing time",
+          "Instant digital pay slip distribution via email/SMS",
+          "Zero manual calculation errors",
+          "100% compliant with NBR and Bangladesh Labor Act",
+        ],
+        process: [
+          { step: "01", title: "Policy Setup", description: "Configuring leave rules, tax slabs, and bonus formulas." },
+          { step: "02", title: "Device Integration", description: "Connecting biometric machines and mobile apps." },
+          { step: "03", title: "Parallel Run", description: "Running side-by-side with your existing payroll for 1 month." },
+          { step: "04", title: "Full Go-Live", description: "Full launch with staff onboarding and support." },
+        ],
+        faqs: [
+          { question: "Does it support biometric attendance machines?", answer: "Yes, we integrate with ZKTeco, Hikvision, Realtime, and any REST API biometric hardware." },
+          { question: "Is the employee data stored securely?", answer: "All employee records are encrypted in transit and at rest using AES-256 standards." },
+        ],
+        ctaTitle: "Automate Your HR & Payroll Today",
+        ctaDescription: "Get a free live demo customized to your employee count.",
+      },
+      {
+        slug: "inventory-sales-tracking",
+        title: "Multi-Warehouse Inventory & Point-of-Sale (POS) Software in Bangladesh",
+        shortTitle: "Inventory & Sales",
+        subtitle: "Gain real-time visibility over multi-branch stock levels, barcode scanning, order fulfillment, and omnichannel retail sales tracking.",
+        description:
+          "Cloud-based inventory and sales tracking applications for retail, wholesale, and distributor networks.",
+        icon: "Package",
+        heroImage: "/images/services/custom-web-apps.jpg",
+        overviewTitle: "Full Visibility Over Stock, Orders & Sales Channels",
+        overview: [
+          "Prevent stockouts, reduce inventory holding costs, and track every product from warehouse entry to point-of-sale customer delivery.",
+          "Our inventory & sales tracking platform gives business owners real-time alerts, barcode scanning, and multi-warehouse synchronization.",
+        ],
+        whyChooseUsTitle: "Why Retailers & Distributors Rely on Our Inventory Software",
+        whyChooseUsDescription: "Fast, reliable, offline-ready POS and cloud inventory architecture designed for high-volume transactions.",
+        whyChooseUs: [
+          { title: "Multi-Warehouse Sync", description: "Track stock transfers across multiple branches, godowns, and outlets in real time." },
+          { title: "Low Stock & Expiry Alerts", description: "Automated notifications when inventory reaches reorder thresholds." },
+          { title: "Omnichannel POS Integration", description: "Sync physical shop POS sales instantly with your online e-commerce catalog." }
+        ],
+        featuresHeading: "Powerful Inventory & Sales Management Capabilities",
+        features: [
+          { title: "Barcode & QR Code Scanning", description: "Instant stock intake, dispatch, and physical audit scanning.", icon: "QrCode" },
+          { title: "Batch & Expiry Tracking", description: "FIFO/LIFO stock movement rules for perishable goods.", icon: "CheckSquare" },
+          { title: "Sales Channel Analytics", description: "Identify top-selling items, store performance, and profit margins.", icon: "TrendingUp" },
+          { title: "Supplier & Purchase Orders", description: "Generate POs and monitor supplier delivery reliability.", icon: "Truck" },
+        ],
+        benefits: [
+          "Real-time stock counts across all locations",
+          "Eliminate inventory shrinkage and theft",
+          "Integrated POS for fast store checkout",
+          "Comprehensive profit & margin analytics",
+        ],
+        process: [
+          { step: "01", title: "Catalog Structuring", description: "Setting up SKUs, categories, and warehouse layouts." },
+          { step: "02", title: "POS & Hardware Setup", description: "Connecting barcode scanners, printers, and terminals." },
+          { step: "03", title: "Staff Training", description: "Hands-on training for store managers and warehouse staff." },
+          { step: "04", title: "Go Live & Monitor", description: "Continuous monitoring and live support." },
+        ],
+        faqs: [
+          { question: "Does the POS work when the internet is down?", answer: "Yes, our POS application supports offline mode and automatically syncs sales when connectivity resumes." },
+        ],
+        ctaTitle: "Master Your Inventory & Boost Sales",
+        ctaDescription: "Request a custom demo tailored to your retail or wholesale business.",
+      },
+      {
+        slug: "nextjs-react-apps",
+        title: "Next.js & React Web Application Development Company in Bangladesh",
+        shortTitle: "Next.js & React",
+        subtitle: "High-performance, sub-second, SEO-optimized enterprise web applications engineered on Next.js 15+ App Router and React",
+        description:
+          "Custom full-stack web applications built with Next.js, React, Tailwind CSS, TypeScript, and bKash/Nagad payment gateways.",
+        icon: "Code2",
+        heroImage: "/images/services/web-development.jpg",
+        overviewTitle: "Build Sub-Second Web Applications for High Conversion",
+        overview: [
+          "Next.js is the modern gold standard for building modern, high-speed web platforms. Combining Server-Side Rendering (SSR), Static Site Generation (SSG), and Server Actions, we deliver lightning-fast applications.",
+          "Whether you need an enterprise SaaS application, a dynamic news portal, or a customer portal, our engineers write clean, maintainable TypeScript.",
+        ],
+        whyChooseUsTitle: "Why Next.js & React are Superior Choice for Digital Leaders",
+        whyChooseUsDescription: "We leverage the latest Next.js 15+ App Router, React Server Components, and optimized edge deployment.",
+        whyChooseUs: [
+          { title: "Sub-Second Page Load Speeds", description: "Server components reduce client bundle size for instant page transitions." },
+          { title: "First-Class SEO Architecture", description: "Dynamic open-graph images, canonical URLs, and automated schema markup." },
+          { title: "Edge Deployment & Autoscaling", description: "Deploy on global edge networks with zero downtime and instant scaling." }
+        ],
+        featuresHeading: "Full-Stack Next.js & React Engineering Features",
+        features: [
+          { title: "Next.js App Router & SSR", description: "Server-side rendering for optimal performance and search indexing.", icon: "Cpu" },
+          { title: "State-of-the-Art UI", description: "Tailwind CSS, Framer Motion, and accessible component design.", icon: "Layout" },
+          { title: "TypeScript Type Safety", description: "Robust codebase reducing production errors and enabling long-term scale.", icon: "ShieldCheck" },
+          { title: "API Routes & Server Actions", description: "Secure server-side logic hiding sensitive keys and DB connections.", icon: "Server" },
+        ],
+        benefits: [
+          "95+ Google Lighthouse performance score guaranteed",
+          "Enhanced conversion rates driven by sub-second response times",
+          "Top rankings in search engines with native SSR",
+          "Seamless responsiveness across mobile, tablet, and desktop",
+        ],
+        process: [
+          { step: "01", title: "Figma Prototype", description: "Interactive wireframes and component architecture." },
+          { step: "02", title: "Next.js Engineering", description: "Clean TypeScript code with modular component structure." },
+          { step: "03", title: "Performance Tuning", description: "Core Web Vitals auditing and asset optimization." },
+          { step: "04", title: "Edge Launch", description: "Global deployment with SSL, CDN, and analytics." },
+        ],
+        faqs: [
+          { question: "Why choose Next.js over traditional React SPA?", answer: "Next.js provides Server-Side Rendering (SSR) which enables search engines to crawl all your content easily, resulting in far superior SEO rankings and faster initial load times." },
+        ],
+        ctaTitle: "Build Your Next.js Application",
+        ctaDescription: "Talk with our lead Next.js architects to plan your product engineering.",
+      },
+      {
+        slug: "custom-portal-development",
+        title: "Enterprise Custom Portal Development, Client Portals & B2B Dashboards in Bangladesh",
+        shortTitle: "Custom Portals",
+        subtitle: "Build secure client portals, vendor management systems, and partner extranets with multi-tenant architecture, SSO authentication, and encrypted file sharing.",
+        description:
+          "Enterprise web portals with multi-tenant architecture, role-based access, and secure document sharing.",
+        icon: "Globe",
+        heroImage: "/images/services/custom-web-apps.jpg",
+        overviewTitle: "Secure Digital Portals for Clients, Suppliers & Partners",
+        overview: [
+          "Self-service portals empower clients, suppliers, and distributors to interact with your organization securely 24/7.",
+          "We build client portals, vendor portals, and internal employee portals with SSO authentication, encrypted document vaults, and automated notification loops.",
+        ],
+        whyChooseUsTitle: "Why Leading Organizations Build Portals With Us",
+        whyChooseUsDescription: "High-security portal architectures built with granular permission controls and intuitive UX.",
+        whyChooseUs: [
+          { title: "Role-Based Access Control (RBAC)", description: "Define exact permission levels for administrators, clients, vendors, and staff." },
+          { title: "Secure Document Repository", description: "Encrypted file sharing, digital signature integration, and version history." },
+          { title: "Single Sign-On (SSO) Support", description: "OAuth 2.0, SAML, Google Workspace, and Microsoft Azure AD integration." }
+        ],
+        featuresHeading: "Enterprise Portal Capabilities",
+        features: [
+          { title: "Real-Time Activity Feeds", description: "Monitor portal logins, document views, and active status.", icon: "Activity" },
+          { title: "Custom Dashboard Analytics", description: "Tailored dashboard views for each user group or client.", icon: "PieChart" },
+          { title: "Secure Payment Gateway", description: "Instant invoice payments inside the portal via bKash, SSLCommerz, or Stripe.", icon: "CreditCard" },
+          { title: "Automated Notifications", description: "In-app alerts, email triggers, and SMS notifications.", icon: "Bell" },
+        ],
+        benefits: [
+          "Eliminate endless back-and-forth email attachments",
+          "24/7 self-service convenience for clients and partners",
+          "Bank-grade security and document encryption",
+          "Seamless integration with internal ERPs and CRMs",
+        ],
+        process: [
+          { step: "01", title: "User Persona Research", description: "Defining access requirements for each user group." },
+          { step: "02", title: "Security Specification", description: "Authentication protocols and encryption standards." },
+          { step: "03", title: "UI/UX & Portal Build", description: "Responsive portal layout development." },
+          { step: "04", title: "UAT & Deployment", description: "User acceptance testing and security auditing." },
+        ],
+        faqs: [
+          { question: "Can clients sign contracts digitally inside the portal?", answer: "Yes, we integrate electronic signature solutions directly inside document workflows." },
+        ],
+        ctaTitle: "Launch Your Custom Enterprise Portal",
+        ctaDescription: "Schedule a portal architecture consultation with our engineering team.",
+      },
+      {
+        slug: "payloadcms-backend",
+        title: "PayloadCMS Backend Architecture, Headless CMS & API Engineering in Bangladesh",
+        shortTitle: "PayloadCMS",
+        subtitle: "Architect enterprise TypeScript-first headless CMS, GraphQL/REST APIs, and database collections with complete editorial control and zero plugin bloat.",
+        description:
+          "Enterprise PayloadCMS backend development with Next.js integration, custom admin dashboards, and database controls.",
+        icon: "Server",
+        heroImage: "/images/services/cms-management.jpg",
+        overviewTitle: "Next-Generation Headless Content Management with PayloadCMS",
+        overview: [
+          "PayloadCMS is the ultimate developer-first, TypeScript-native headless CMS built for modern Next.js and React applications.",
+          "Say goodbye to clunky CMS admin panels and slow API responses. We architect PayloadCMS backends that give content editors total control while providing developers clean, fully typed code.",
+        ],
+        whyChooseUsTitle: "Why PayloadCMS is Revolutionizing Backend Content Delivery",
+        whyChooseUsDescription: "Engineered in pure TypeScript, running natively inside Node.js and Next.js applications.",
+        whyChooseUs: [
+          { title: "100% Type-Safe Content Schema", description: "Auto-generated TypeScript interfaces for bug-free frontend data fetching." },
+          { title: "Lightning-Fast REST & GraphQL", description: "Native REST and GraphQL endpoints generated automatically from schema." },
+          { title: "Tailored Admin Panel UI", description: "Sleek, customizable admin control panel designed for editorial velocity." }
+        ],
+        featuresHeading: "PayloadCMS Architecture Features",
+        features: [
+          { title: "Custom Field Components", description: "Bespoke editor blocks, rich text, and media management.", icon: "FileEdit" },
+          { title: "Granular Access Control", description: "Field-level and document-level security rules.", icon: "Lock" },
+          { title: "Database Flexibility", description: "Support for PostgreSQL, MongoDB, and SQLite.", icon: "Database" },
+          { title: "Localization & i18n", description: "Multi-language content management with Bangla & English.", icon: "Globe" },
+        ],
+        benefits: [
+          "Zero plugin bloat or security vulnerabilities",
+          "Fully typed data structures matching your frontend",
+          "Infinite scalability with Next.js edge deployment",
+          "Easy content management for marketing teams",
+        ],
+        process: [
+          { step: "01", title: "Schema Modeling", description: "Defining collections, fields, and access rules." },
+          { step: "02", title: "PayloadCMS Setup", description: "Configuring database connection and admin layout." },
+          { step: "03", title: "Next.js Integration", description: "Connecting Payload API directly with frontend components." },
+          { step: "04", title: "Launch & Support", description: "Deploying to production and training content managers." },
+        ],
+        faqs: [
+          { question: "Can PayloadCMS run inside our existing Next.js project?", answer: "Yes! PayloadCMS can run directly inside the Next.js App Router or as an independent headless backend." },
+        ],
+        ctaTitle: "Upgrade to PayloadCMS Architecture",
+        ctaDescription: "Get a free demonstration of PayloadCMS content velocity.",
+      },
+      {
+        slug: "scalable-headless-ecommerce",
+        title: "High-Performance Headless E-Commerce Development with Next.js & MedusaJS",
+        shortTitle: "Headless E-Com",
+        subtitle: "Blazing-fast sub-second storefronts, localized bKash & Nagad one-click checkout, and automated courier fulfillment API integration.",
+        description:
+          "Custom headless e-commerce platforms using Next.js, MedusaJS, Shopify Storefront API, or PayloadCMS.",
+        icon: "ShoppingCart",
+        heroImage: "/images/services/ecommerce-solutions.jpg",
+        overviewTitle: "Unleash Conversion Speed with Headless E-Commerce",
+        overview: [
+          "Traditional e-commerce platforms struggle under heavy flash sale traffic and slow mobile rendering. Headless e-commerce decouples the frontend storefront from the backend commerce engine.",
+          "We build ultra-fast storefronts that load instantly, score 98+ on Lighthouse, and seamlessly process payments via bKash, Nagad, cards, and courier delivery APIs.",
+        ],
+        whyChooseUsTitle: "Why High-Growth Brands Switch to Headless Commerce",
+        whyChooseUsDescription: "Combine global e-commerce performance with local Bangladeshi payment and courier ecosystems.",
+        whyChooseUs: [
+          { title: "Instant Page Transitions", description: "Sub-second product pages and instant filtering that increase checkout completion." },
+          { title: "Local Payment Gateways", description: "Native integration with bKash, Nagad, Rocket, SSLCommerz, and Stripe." },
+          { title: "Automated Courier Fulfillment", description: "Direct API dispatch to Pathao, RedX, Steadfast, and Sundarban." }
+        ],
+        featuresHeading: "Headless Commerce Platform Features",
+        features: [
+          { title: "Instant Catalog Search", description: "Algolia or Typesense powered instant search and multi-facet filters.", icon: "Search" },
+          { title: "One-Click Mobile Checkout", description: "Streamlined checkout designed for mobile buyers in Bangladesh.", icon: "Smartphone" },
+          { title: "Inventory & ERP Sync", description: "Synchronize stock levels across physical stores and online.", icon: "RefreshCw" },
+          { title: "Abandoned Cart Recovery", description: "Automated WhatsApp and SMS reminders for uncompleted orders.", icon: "MessageSquare" },
+        ],
+        benefits: [
+          "3x faster product page load speed than traditional stores",
+          "25%+ increase in online checkout conversions",
+          "Seamless handling of massive traffic spikes during promotional campaigns",
+          "Full mobile responsiveness across all smartphone devices",
+        ],
+        process: [
+          { step: "01", title: "Store Strategy", description: "Architecture planning for frontend storefront and backend engine." },
+          { step: "02", title: "Custom UI Design", description: "Conversion-optimized product pages and cart flow." },
+          { step: "03", title: "Integration Build", description: "Gateway, courier, and inventory API setup." },
+          { step: "04", title: "Launch & Growth", description: "Performance auditing, go-live, and analytics." },
+        ],
+        faqs: [
+          { question: "Can we use our existing Shopify backend with a Next.js frontend?", answer: "Yes! We can connect Next.js via Shopify's GraphQL Storefront API for a headless storefront." },
+        ],
+        ctaTitle: "Scale Your E-Commerce Revenue",
+        ctaDescription: "Consult with our headless e-commerce specialists for a custom architecture plan.",
+      },
+      {
+        slug: "rest-graphql-api",
+        title: "Enterprise REST & GraphQL API Development & Microservices in Bangladesh",
+        shortTitle: "API Solutions",
+        subtitle: "Architect high-throughput, sub-50ms REST and GraphQL APIs with OAuth 2.0 security, Redis caching, rate limiting, and automated OpenAPI documentation.",
+        description:
+          "Secure, high-performance RESTful and GraphQL API development with rate-limiting, documentation, and SDKs.",
+        icon: "Plug",
+        heroImage: "/images/services/web-development.jpg",
+        overviewTitle: "Connect Systems, Mobile Apps & Partners with Secure APIs",
+        overview: [
+          "Modern software ecosystems rely on fast, robust API architecture. We design, build, and maintain enterprise REST and GraphQL APIs that connect web platforms, mobile apps, third-party services, and legacy databases.",
+          "Our engineers enforce strict security standards, rate-limiting, Swagger/OpenAPI documentation, and automated testing.",
+        ],
+        whyChooseUsTitle: "Why Enterprise Teams Choose Our API Engineering",
+        whyChooseUsDescription: "Built with Node.js, Go, or Python for high concurrency and sub-50ms API response times.",
+        whyChooseUs: [
+          { title: "Sub-50ms Response Times", description: "Optimized database queries, redis caching, and edge routing." },
+          { title: "Bank-Grade API Security", description: "OAuth 2.0, JWT tokens, rate-limiting, and CORS protection." },
+          { title: "Interactive OpenAPI Specs", description: "Automated Swagger documentation and Postman collections for developers." }
+        ],
+        featuresHeading: "API Engineering Capabilities",
+        features: [
+          { title: "GraphQL Schema Design", description: "Fetch precisely the data needed without over-fetching or under-fetching.", icon: "Share2" },
+          { title: "Microservices Architecture", description: "Decoupled services for independent scaling and deployment.", icon: "Boxes" },
+          { title: "Third-Party Connectors", description: "Integrations for CRM, ERP, payment, and logistics APIs.", icon: "Workflow" },
+          { title: "Webhooks & Real-Time Sync", description: "Event-driven webhooks for instant data synchronization.", icon: "Zap" },
+        ],
+        benefits: [
+          "Unified backend serving mobile apps and web platforms",
+          "High concurrency handling millions of requests daily",
+          "Comprehensive documentation reducing onboarding time",
+          "Real-time monitoring and uptime SLAs",
+        ],
+        process: [
+          { step: "01", title: "API Specification", description: "Defining endpoints, payloads, and authentication." },
+          { step: "02", title: "Development & Testing", description: "Writing modular code with automated unit and integration tests." },
+          { step: "03", title: "Gateway & Caching", description: "Configuring Redis cache, API gateway, and rate limits." },
+          { step: "04", title: "Deployment & Monitoring", description: "Monitoring latency, errors, and throughput in real time." },
+        ],
+        faqs: [
+          { question: "Should we choose REST or GraphQL for our mobile app?", answer: "GraphQL is often ideal for mobile apps to minimize payload sizes, while REST is great for simple web services. We help you choose or combine both." },
+        ],
+        ctaTitle: "Architect Your Enterprise API",
+        ctaDescription: "Speak with our senior API architects today.",
+      },
+      {
+        slug: "enterprise-ui-ux",
+        title: "Enterprise Product UI/UX Design & Figma Prototyping Agency in Bangladesh",
+        shortTitle: "UI/UX Design",
+        subtitle: "Design intuitive, conversion-focused user interfaces, interactive Figma design prototypes, and WCAG AA accessible software design systems.",
+        description:
+          "Transform complex software into intuitive visual experiences with user research, Figma prototypes, and design systems.",
+        icon: "PenTool",
+        heroImage: "/images/services/web-development.jpg",
+        overviewTitle: "User-Centered UI/UX Design for Complex Digital Products",
+        overview: [
+          "Great visual design is more than aesthetics; it is about user productivity, speed, and conversion efficiency.",
+          "Our UI/UX designers turn complex corporate workflows, SaaS products, and mobile apps into clean, intuitive, accessible interfaces through rigorous user testing and Figma prototyping.",
+        ],
+        whyChooseUsTitle: "Why Top Brands Partner With Our UX Studio",
+        whyChooseUsDescription: "Combining cognitive psychology, modern typography, and rigorous user testing.",
+        whyChooseUs: [
+          { title: "User Research & Journey Mapping", description: "Deep dive into end-user behavior, pain points, and usability goals." },
+          { title: "High-Fidelity Interactive Figma", description: "Pixel-perfect Figma prototypes that mirror the final working software." },
+          { title: "WCAG 2.1 AA Accessibility", description: "High contrast, screen-reader friendly, and inclusive UI components." }
+        ],
+        featuresHeading: "End-to-End UI/UX Design Process Features",
+        features: [
+          { title: "Wireframing & Information Architecture", description: "Structuring user flows and navigation hierarchies.", icon: "Layout" },
+          { title: "Design Systems & Tokens", description: "Reusable color palettes, typography, and UI component sets.", icon: "Palette" },
+          { title: "Usability Testing & Iteration", description: "Validating wireframes with actual end-users before coding.", icon: "CheckCircle" },
+          { title: "Developer Handoff Support", description: "Exporting clean CSS tokens and component specs for engineers.", icon: "Code" },
+        ],
+        benefits: [
+          "Dramatically reduced user training time",
+          "Higher conversion rates and user retention",
+          "Consistent visual brand identity across platforms",
+          "Faster development handoff with organized Figma assets",
+        ],
+        process: [
+          { step: "01", title: "Empathize", description: "Stakeholder interviews and user persona mapping." },
+          { step: "02", title: "Wireframe", description: "Building low-fidelity layout structures." },
+          { step: "03", title: "Visual UI", description: "Crafting polished visual design in Figma." },
+          { step: "04", title: "Prototype & Test", description: "Interactive click-through testing." },
+        ],
+        faqs: [
+          { question: "Do we get full access to the Figma design files?", answer: "Yes, you receive 100% ownership of all Figma source files, components, and design assets." },
+        ],
+        ctaTitle: "Elevate Your Product UI/UX",
+        ctaDescription: "Schedule a UX audit or product design workshop with our design lead.",
+      },
+      {
+        slug: "web-performance-core-web-vitals",
+        title: "Website Speed Optimization & Google Core Web Vitals Audit in Bangladesh",
+        shortTitle: "Core Web Vitals",
+        subtitle: "Audit and optimize LCP, INP, CLS, and page rendering speeds to achieve 95+ Google Lighthouse scores and dominate organic search rankings.",
+        description:
+          "Audit and fix web performance bottlenecks, script bloat, and Core Web Vitals for maximum speed.",
+        icon: "Gauge",
+        heroImage: "/images/services/web-development.jpg",
+        overviewTitle: "Pass Core Web Vitals & Supercharge Search Engine Rankings",
+        overview: [
+          "Google uses Core Web Vitals (LCP, INP, CLS) as a direct search ranking factor. Slow sites lose both organic rankings and customer conversions.",
+          "Our performance engineers audit JavaScript execution, image compression, server response times, and rendering paths to achieve 95+ Lighthouse scores.",
+        ],
+        whyChooseUsTitle: "Why Speed Matters for Your Bottom Line",
+        whyChooseUsDescription: "Every 100ms improvement in page speed increases conversion rates by up to 7%.",
+        whyChooseUs: [
+          { title: "Fix Largest Contentful Paint (LCP)", description: "Optimize server response times, critical CSS, and image loading." },
+          { title: "Eliminate Interaction to Next Paint (INP)", description: "Reduce heavy JavaScript main-thread blocking for instant clicks." },
+          { title: "Stop Cumulative Layout Shift (CLS)", description: "Ensure stable visual layouts that prevent annoying content jumps." }
+        ],
+        featuresHeading: "Technical Speed Optimization Capabilities",
+        features: [
+          { title: "JavaScript Bundle Shrinking", description: "Code splitting, tree shaking, and removing unused scripts.", icon: "Scissors" },
+          { title: "Next-Gen Image & Video Assets", description: "AVIF/WebP conversion, responsive srcsets, and lazy loading.", icon: "Image" },
+          { title: "CDN & Edge Caching", description: "Cloudflare/Vercel edge caching for global sub-100ms delivery.", icon: "Cloud" },
+          { title: "Database Query Optimization", description: "Indexing slow SQL queries and implementing Redis caching.", icon: "Zap" },
+        ],
+        benefits: [
+          "Pass all Google Core Web Vitals checks",
+          "Boost organic search positions on Google",
+          "Lower bounce rates and higher sales conversions",
+          "Detailed before-and-after performance audit report",
+        ],
+        process: [
+          { step: "01", title: "Diagnostic Audit", description: "Comprehensive Lighthouse and Chrome UX Report profiling." },
+          { step: "02", title: "Code Optimization", description: "Refactoring critical rendering paths and script execution." },
+          { step: "03", title: "Server & Caching Setup", description: "Configuring CDN edge caching and compression." },
+          { step: "04", title: "Verification", description: "Validating fixes across PageSpeed Insights and Google Search Console." },
+        ],
+        faqs: [
+          { question: "How long does a performance optimization project take?", answer: "Most web performance optimizations are completed within 5 to 10 business days." },
+        ],
+        ctaTitle: "Speed Up Your Website Today",
+        ctaDescription: "Get a free 24-hour Core Web Vitals assessment.",
+      },
+      {
+        slug: "design-system-component-library",
+        title: "Enterprise Design Systems & Reusable React Component Libraries in Bangladesh",
+        shortTitle: "Design Systems",
+        subtitle: "Unify digital brand identity, accelerate development cycles 3x, and build accessible, themeable React/Tailwind component libraries with Storybook.",
+        description:
+          "Build scalable, accessible component libraries and design systems for enterprise software consistency.",
+        icon: "Layers",
+        heroImage: "/images/services/web-development.jpg",
+        overviewTitle: "Unify Enterprise Software Design Across Teams & Products",
+        overview: [
+          "As organizations grow, inconsistent UI components create visual clutter, code duplication, and slow development velocity.",
+          "We build customized design systems and reusable React/Tailwind component libraries with Storybook documentation that empower engineering teams to ship features 3x faster.",
+        ],
+        whyChooseUsTitle: "Why Enterprise Product Teams Invest in Design Systems",
+        whyChooseUsDescription: "Ensure 100% brand consistency across all web products, portals, and internal tools.",
+        whyChooseUs: [
+          { title: "3x Faster Product Feature Delivery", description: "Engineers assemble pages quickly using pre-tested, accessible components." },
+          { title: "Design Token Architecture", description: "Centralized color, spacing, and typography tokens syncing Figma and code." },
+          { title: "Storybook Interactive Docs", description: "Live, documented component playground for designers and developers." }
+        ],
+        featuresHeading: "Design System Engineering Features",
+        features: [
+          { title: "Accessible Component Suite", description: "Buttons, modals, tables, forms, and navigation built to WCAG AA standards.", icon: "CheckSquare" },
+          { title: "Dark & Light Mode Support", description: "Seamless theme switching using CSS variables and Tailwind.", icon: "Moon" },
+          { title: "NPM Package Distribution", description: "Publish internal private UI package for instant multi-repo import.", icon: "Package" },
+          { title: "Automated Visual Testing", description: "Detect unwanted UI regressions before code merges into production.", icon: "Shield" },
+        ],
+        benefits: [
+          "Consistent user experience across all corporate web applications",
+          "Significant reduction in frontend code duplication",
+          "Accelerated onboarding for new developers and designers",
+          "Future-proof brand updates applied globally with a single version bump",
+        ],
+        process: [
+          { step: "01", title: "UI Inventory", description: "Auditing existing visual components and codebases." },
+          { step: "02", title: "Token Definition", description: "Standardizing color palettes, typography, and spacing scales." },
+          { step: "03", title: "Component Engineering", description: "Building accessible React components with Tailwind CSS." },
+          { step: "04", title: "Storybook & NPM Setup", description: "Publishing live documentation and internal package." },
+        ],
+        faqs: [
+          { question: "Can the component library be used across multiple tech stacks?", answer: "Yes, design tokens can be exported to CSS variables, React, Vue, or Web Components." },
+        ],
+        ctaTitle: "Build Your Enterprise Design System",
+        ctaDescription: "Schedule a design system strategy session with our lead architects.",
+      },
     ],
   },
 
@@ -1027,21 +1639,21 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
   // =========================================================
   "legal-compliance": {
     slug: "legal-compliance",
-    title: "Best Legal Compliance & Managed Services in Bangladesh",
+    title: "Corporate Legal Compliance, RJSC Registration & Tax Advisory in Bangladesh",
     shortTitle: "Legal",
-    subtitle: "Stay 100% compliant with Bangladesh business law",
+    subtitle: "Complete business registration, RJSC company incorporation, trade licensing, NBR tax & VAT filing, and trademark protection under one roof.",
     description:
       "Establish your presence in the Bangladeshi market with a partner that understands global standards. Our Legal Compliance framework provides the structural integrity your business needs to thrive in Dhaka’s elite commercial zones. From BIDA approvals to comprehensive Business Advisory, we deliver the precision and transparency required for multi-national success.",
     icon: "Scale",
     heroImage: "/images/services/legal-compliance.jpg",
     intro:
-      "Navigating the regulatory intricacies of the Bangladeshi market demands a partner with elite precision. Our Legal Compliance ecosystem is architected for those who prioritize structural integrity and long-term security. From high-authority RJSC filings and NBR tax advisory to comprehensive labor law frameworks, we provide the Managed Services and Business Advisory required to keep your operations audit-ready. Whether you are an MNC establishing a foothold in Gulshan or a high-growth firm scaling in Dhaka’s business hubs, we offer tailored solutions that align with the highest global standards of corporate governance.",
+      "Navigating the regulatory intricacies of the Bangladeshi market demands a partner with elite precision. Our Legal Compliance ecosystem is architected for those who prioritize structural integrity and long-term security. From high-authority RJSC filings and NBR tax advisory to comprehensive labor law frameworks, we provide the Managed Services and Business Advisory required to keep your operations audit-ready. Whether you are an MNC establishing a foothold in Motijheel or scaling across Dhaka’s financial and commercial hubs, we offer tailored solutions that align with the highest global standards of corporate governance.",
     services: [
       {
         slug: "company-formation",
-        title: "Seamless Company Formation & Registration in Bangladesh",
+        title: "Company Formation, RJSC Registration & Foreign Investment (BIDA) in Bangladesh",
         shortTitle: "Company Setup",
-        subtitle: "Register your company with RJSC the right way",
+        subtitle: "Incorporate Private Limited companies, register Foreign Branch Offices, and secure BIDA investment approvals in Dhaka with 100% legal precision.",
         description:
           "Start your business the right way. We provide end-to-end company formation services in Bangladesh, including RJSC registration, trade licenses, and tax compliance.",
         icon: "Building",
@@ -1153,9 +1765,9 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
       },
       {
         slug: "trade-license",
-        title: "Fast-Track Trade License Registration in Bangladesh",
+        title: "Fast-Track Trade License Issuance, Renewal & Municipal Permits in Bangladesh",
         shortTitle: "Trade License",
-        subtitle: "Get and renew your trade license without the queues",
+        subtitle: "Procure and renew corporate trade licenses, e-Trade licenses, and specialized commercial permits across DSCC, DNCC, and City Corporations nationwide.",
         description:
           "Get your business legally authorized with ease. From new applications to annual renewals, Corporate.bd provides expert assistance for Trade License procurement in Bangladesh.",
         icon: "ScrollText",
@@ -1265,9 +1877,9 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
       },
       {
         slug: "tax-vat",
-        title: "Strategic Tax & VAT Consultancy in Bangladesh",
+        title: "Corporate Tax Planning, VAT (BIN) Registration & NBR Compliance in Bangladesh",
         shortTitle: "Tax & VAT",
-        subtitle: "Complete tax and VAT compliance under one roof",
+        subtitle: "Maximize tax efficiency and ensure 100% compliance with monthly Mushak VAT returns, TDS filings, and annual corporate income tax submissions.",
         description:
           "Income tax, VAT registration, monthly returns, audits and tax planning by chartered accountants.",
         icon: "Calculator",
@@ -1381,9 +1993,9 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
       },
       {
         slug: "intellectual-property",
-        title: "IP & Trademark Registration Services in Bangladesh",
+        title: "Trademark Registration, Patent Filing & Copyright Law Services in Bangladesh",
         shortTitle: "IP Services",
-        subtitle: "Protect your brand, ideas and creative work",
+        subtitle: "Protect brand assets, logos, software source code, and industrial inventions with DPDT registration and aggressive anti-counterfeit IP defense.",
         description:
           "Protect your brand’s unique identity. We provide expert services for Trademark, Patent, Copyright, and Industrial Design registration in Bangladesh to safeguard your intellectual assets.",
         icon: "Copyright",
@@ -1497,9 +2109,9 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
   // =========================================================
   "managed-it-services": {
     slug: "managed-it-services",
-    title: "Managed IT Services",
+    title: "Managed IT Services, Corporate IT AMC & Server Administration in Bangladesh",
     shortTitle: "Managed IT",
-    subtitle: "Your outsourced IT department",
+    subtitle: "Enterprise IT support, Annual Maintenance Contracts (AMC), 24/7 Linux/Windows server administration, and workflow AI automation in Dhaka.",
     description:
       "Annual maintenance contracts, server administration, AI automation and IT consultancy for businesses of every size.",
     icon: "Settings",
@@ -1509,9 +2121,9 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
     services: [
       {
         slug: "amc",
-        title: "Comprehensive IT AMC Services in Bangladesh",
+        title: "Enterprise IT Annual Maintenance Contract (AMC) & Network Support in Bangladesh",
         shortTitle: "AMC",
-        subtitle: "All-inclusive IT support for a fixed monthly fee",
+        subtitle: "Guaranteed SLA-backed corporate IT support, preventative hardware maintenance, multi-branch network troubleshooting, and 24/7 helpdesk.",
         description:
           "Keep your business running 24/7 with our Managed IT AMC. We provide proactive hardware maintenance, network support, and emergency IT troubleshooting for enterprises.",
         icon: "Wrench",
@@ -1623,9 +2235,9 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
       },
       {
         slug: "server-administration",
-        title: "Expert Server Administration & Management in Bangladesh",
+        title: "24/7 Linux & Windows Server Administration & Cloud Infrastructure in Bangladesh",
         shortTitle: "Servers",
-        subtitle: "Linux & Windows server expertise on demand",
+        subtitle: "Maximize server uptime and security with expert Linux (Ubuntu/RHEL) & Windows administration, CIS hardening, automated disaster backups, and cloud DevOps.",
         description:
           "Ensure 100% uptime and robust security. We provide professional Windows/Linux server administration, cloud management, and proactive monitoring for your business infrastructure.",
         icon: "Server",
@@ -1737,9 +2349,9 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
       },
       {
         slug: "ai-automation",
-        title: "AI Automation",
+        title: "Enterprise AI Automation, Custom LLM Agents & Workflow Bots in Bangladesh",
         shortTitle: "AI Automation",
-        subtitle: "Automate workflows with modern AI",
+        subtitle: "Automate repetitive business operations with custom RAG chatbots, Bengali NLP models, intelligent invoice extraction, and CRM automation.",
         description:
           "Custom AI agents, RAG chatbots, document automation and workflow automation using OpenAI, Anthropic and open-source models.",
         icon: "Bot",
@@ -1842,9 +2454,9 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
       },
       {
         slug: "it-consultancy",
-        title: "Expert IT Consultancy Services | Tech Solutions for Business",
+        title: "Strategic IT Consultancy, CTO-as-a-Service & Digital Transformation in Bangladesh",
         shortTitle: "Consultancy",
-        subtitle: "Looking for reliable IT consultancy? We provide expert network support, system integration, and custom tech solutions to scale your business. Get a free consultation!",
+        subtitle: "Scale your organization with vendor-neutral technology audits, cloud migration roadmaps, security compliance, and fractional CTO leadership.",
         description:
           "Technology strategy, digital transformation, vendor selection, audits and CTO-as-a-Service for SMEs and enterprises.",
         icon: "Briefcase",
@@ -1958,9 +2570,9 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
   // =========================================================
   seo: {
     slug: "seo",
-    title: "SEO & Digital Marketing",
+    title: "Enterprise SEO, Local Map Pack Domination & Digital Growth in Bangladesh",
     shortTitle: "SEO",
-    subtitle: "Grow organic traffic that converts to revenue",
+    subtitle: "Drive high-intent buyer traffic, secure Google #1 rankings, dominate Google Maps 3-Pack, and scale organic revenue with data-driven SEO.",
     description:
       "Local SEO, product SEO, content strategy and social media management for businesses targeting Bangladesh and global markets.",
     icon: "TrendingUp",
@@ -1970,9 +2582,9 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
     services: [
       {
         slug: "local-seo",
-        title: "Dominate Local Search & Google Maps in Bangladesh",
-        shortTitle: "Dominate Local Search & Google Maps in Bangladesh",
-        subtitle: "Dominate searches in your city and across Bangladesh",
+        title: "Local SEO, Google Business Profile (GBP) & Google Maps 3-Pack Optimization in Bangladesh",
+        shortTitle: "Local SEO",
+        subtitle: "Dominate local 'near me' searches across Dhaka, Chittagong, and major cities with verified GBP management, geo-citations, and local authority backlinks.",
         description:
           "Turn nearby searches into loyal customers. We specialize in Google Business Profile optimization, local citations, and hyper-local SEO to boost your foot traffic and sales.",
         icon: "MapPin",
@@ -2085,9 +2697,9 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
       },
       {
         slug: "product-seo",
-        title: "High-Converting E-commerce & Product SEO Services in Banglades",
+        title: "E-Commerce Product SEO, Category Hierarchy & Conversion Rate Optimization in Bangladesh",
         shortTitle: "Product SEO",
-        subtitle: "Rank product pages and earn buyer intent traffic",
+        subtitle: "Outrank competitors for high-intent purchase searches with structured JSON-LD schema, technical Core Web Vitals fixes, and category keyword mapping.",
         description:
           "Turn your product pages into 24/7 sales engines. We specialize in E-commerce SEO, product schema, and conversion-focused optimization to skyrocket your online sales.",
         icon: "Tag",
@@ -2199,9 +2811,9 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
       },
       {
         slug: "content-strategy",
-        title: "Content Strategy",
-        shortTitle: "Content",
-        subtitle: "Editorial planning that earns traffic and trust",
+        title: "Topical Authority, Content Strategy & SEO Copywriting in Bangladesh",
+        shortTitle: "Content Strategy",
+        subtitle: "Establish industry leadership with semantic topic cluster modeling, in-depth bilingual pillar articles, and conversion-focused copywriting.",
         description:
           "Topical authority, content calendars, blog production and content distribution for brands serious about organic growth.",
         icon: "BookOpen",
@@ -2304,9 +2916,9 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
       },
       {
         slug: "social-media-management",
-        title: "Best Social Media Management Services in Bangladesh",
+        title: "Full-Funnel Social Media Management & Performance Marketing in Bangladesh",
         shortTitle: "Social Media",
-        subtitle: "Grow brand visibility, engagement and revenue on social",
+        subtitle: "Scale your brand with strategic omnichannel content calendars, short-form video production, community moderation, and high-ROI Meta & TikTok ads.",
         description:
           "Elevate your brand’s digital presence. We provide end-to-end social media management, creative content strategy, and data-driven ad campaigns to grow your community and ROI.",
         icon: "Share2",
@@ -2434,7 +3046,7 @@ export function getService(
 ): { service: Service; category: ServiceCategory } | undefined {
   const category = SERVICE_CATEGORIES[categorySlug]
   if (!category) return undefined
-  const service = category.services.find((s) => s.slug === serviceSlug)
+  const service = category.services.find((s: Service) => s.slug === serviceSlug)
   if (!service) return undefined
   return { service, category }
 }

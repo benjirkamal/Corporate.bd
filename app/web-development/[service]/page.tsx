@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { ServicePageTemplate } from "@/components/service-page-template"
-import { getCategory, getService } from "@/lib/services-data"
+import { getCategory, getService, Service } from "@/lib/services-data"
 
 const CATEGORY_SLUG = "web-development"
 
@@ -9,7 +9,7 @@ type Params = Promise<{ service: string }>
 
 export async function generateStaticParams() {
   const category = getCategory(CATEGORY_SLUG)
-  return category?.services.map((s) => ({ service: s.slug })) ?? []
+  return category?.services.map((s: Service) => ({ service: s.slug })) ?? []
 }
 
 export async function generateMetadata({
@@ -21,15 +21,36 @@ export async function generateMetadata({
   const result = getService(CATEGORY_SLUG, serviceSlug)
   if (!result) return {}
   const { service } = result
+  const title = service.title
+  const description = service.subtitle || service.description || ""
+  const canonicalUrl = `/${CATEGORY_SLUG}/${service.slug}`
+  const ogImage = service.heroImage || "/images/og-image.jpg"
+
   return {
-    title: service.title,
-    description: service.description,
-    alternates: { canonical: `/${CATEGORY_SLUG}/${service.slug}` },
+    title,
+    description,
+    alternates: { canonical: canonicalUrl },
     openGraph: {
-      title: service.title,
-      description: service.description,
-      url: `/${CATEGORY_SLUG}/${service.slug}`,
-      images: [{ url: service.heroImage }],
+      title: `${title} | Corporate.bd`,
+      description,
+      url: canonicalUrl,
+      siteName: "Corporate.bd",
+      locale: "en_US",
+      type: "website",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${title} | Corporate.bd`,
+      description,
+      images: [ogImage],
     },
   }
 }

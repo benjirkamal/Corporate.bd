@@ -8,15 +8,36 @@ const CATEGORY_SLUG = "digital-infrastructure"
 export function generateMetadata(): Metadata {
   const category = getCategory(CATEGORY_SLUG)
   if (!category) return {}
+  const title = `${category.title} Services in Bangladesh`
+  const description = category.subtitle || category.description || ""
+  const canonicalUrl = `/${CATEGORY_SLUG}`
+  const ogImage = category.heroImage || "/images/og-image.jpg"
+
   return {
-    title: category.title,
-    description: category.description,
-    alternates: { canonical: `/${CATEGORY_SLUG}` },
+    title,
+    description,
+    alternates: { canonical: canonicalUrl },
     openGraph: {
-      title: category.title,
-      description: category.description,
-      url: `/${CATEGORY_SLUG}`,
-      images: [{ url: category.heroImage }],
+      title: `${title} | Corporate.bd`,
+      description,
+      url: canonicalUrl,
+      siteName: "Corporate.bd",
+      locale: "en_US",
+      type: "website",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${title} | Corporate.bd`,
+      description,
+      images: [ogImage],
     },
   }
 }

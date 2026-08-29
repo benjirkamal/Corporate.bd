@@ -48,8 +48,8 @@ const contactCards = [
   {
     icon: MapPin,
     label: "Office",
-    primary: `${SITE_CONFIG.address.line1}, ${SITE_CONFIG.address.line2}`,
-    secondary: `${SITE_CONFIG.address.city} ${SITE_CONFIG.address.postalCode}`,
+    primary: `${SITE_CONFIG.address.line1} ${SITE_CONFIG.address.line2}`,
+    secondary: `${SITE_CONFIG.address.city}-${SITE_CONFIG.address.postalCode}, Bangladesh`,
     href: "#map",
   },
   {
@@ -70,14 +70,71 @@ const serviceOptions = MAIN_NAV.filter((n) => n.children?.length).flatMap(
 )
 
 export default function ContactPage() {
+  const jsonLdContact = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: `Contact ${SITE_CONFIG.name}`,
+    description: `Get in touch with ${SITE_CONFIG.name} for corporate digital, legal, and IT solutions in Bangladesh.`,
+    url: `${SITE_CONFIG.url}/contact`,
+    mainEntity: {
+      "@type": "LocalBusiness",
+      name: SITE_CONFIG.name,
+      telephone: SITE_CONFIG.phone,
+      email: SITE_CONFIG.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: `${SITE_CONFIG.address.line1}, ${SITE_CONFIG.address.line2}`,
+        addressLocality: SITE_CONFIG.address.city,
+        postalCode: SITE_CONFIG.address.postalCode,
+        addressCountry: SITE_CONFIG.address.country,
+      },
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+          opens: "09:00",
+          closes: "19:00",
+        },
+      ],
+    },
+  }
+
+  const jsonLdBreadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: SITE_CONFIG.url,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Contact Us",
+        item: `${SITE_CONFIG.url}/contact`,
+      },
+    ],
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdContact) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
+      />
+
       <PageHero
         eyebrow="Get in touch"
-        title="Let's talk about your next project"
-        description="Tell us a little about what you need. A senior consultant will respond within one business hour during working days."
+        title="Contact Bangladesh's Trusted Enterprise IT, Web Development & Legal Compliance Partner"
+        description="Schedule a consultation with our senior software engineers, legal compliance attorneys, and cloud architects in Motijheel C/A, Dhaka. We respond to inquiries within 1 business hour."
         image="/images/contact/team.jpg"
-        imageAlt="Customer support team at Corporate.bd"
+        imageAlt="Corporate.bd client consulting and enterprise technology team in Dhaka, Bangladesh"
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact Us" }]}
       />
 
@@ -267,18 +324,17 @@ export default function ContactPage() {
                 Visit us
               </span>
               <h2 className="mt-3 font-serif text-2xl font-bold tracking-tight md:text-3xl text-balance">
-                Drop by our Gulshan office
+                Drop by our Motijheel office
               </h2>
               <p className="mt-4 text-muted-foreground leading-relaxed">
-                We love meeting clients in person. The office is a 5-minute walk
-                from Gulshan-1 circle, with parking available on-site.
+                We love meeting clients in person. Our office is located at 67 Motijheel Commercial Area, right by the Motijheel Metro Rail Station, with accessible parking available.
               </p>
               <ul className="mt-6 space-y-3 text-sm">
                 <li className="flex items-start gap-2.5">
                   <MapPin className="h-4 w-4 mt-0.5 text-accent flex-shrink-0" />
                   <span>
-                    {SITE_CONFIG.address.line1}, {SITE_CONFIG.address.line2},{" "}
-                    {SITE_CONFIG.address.city} {SITE_CONFIG.address.postalCode},{" "}
+                    {SITE_CONFIG.address.line1} {SITE_CONFIG.address.line2},{" "}
+                    {SITE_CONFIG.address.city}-{SITE_CONFIG.address.postalCode},{" "}
                     {SITE_CONFIG.address.country}
                   </span>
                 </li>
@@ -292,7 +348,7 @@ export default function ContactPage() {
             <div className="relative aspect-video overflow-hidden rounded-xl border border-border bg-muted">
               <iframe
                 title="Corporate.bd office map"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=90.4150%2C23.7780%2C90.4250%2C23.7880&amp;layer=mapnik&amp;marker=23.7830%2C90.4200"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=90.4100%2C23.7280%2C90.4260%2C23.7380&amp;layer=mapnik&amp;marker=23.7330%2C90.4180"
                 className="absolute inset-0 h-full w-full border-0"
                 loading="lazy"
               />

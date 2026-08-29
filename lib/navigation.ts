@@ -16,7 +16,7 @@ export const MAIN_NAV: NavItem[] = [
     href: "/",
   },
   {
-    label: "Digital Infrastructure",
+    label: "Domain",
     href: "/digital-infrastructure",
     description: "Domains, email, hosting and security for your business.",
     children: [
@@ -36,6 +36,11 @@ export const MAIN_NAV: NavItem[] = [
         description: "Reliable, scalable cloud hosting solutions.",
       },
       {
+        label: "VPS Hosting",
+        href: "/digital-infrastructure/vps-hosting",
+        description: "High-performance Linux & Windows VPS with NVMe SSD.",
+      },
+      {
         label: "SSL & Security",
         href: "/digital-infrastructure/ssl-security",
         description: "Encrypt and protect your online assets.",
@@ -43,29 +48,97 @@ export const MAIN_NAV: NavItem[] = [
     ],
   },
   {
-    label: "Web",
+    label: "Software & Web Apps",
     href: "/web-development",
-    description: "Custom websites, e-commerce and applications.",
+    description: "Enterprise software, modern web applications, e-commerce and UI/UX solutions.",
     children: [
       {
-        label: "Corporate Websites",
-        href: "/web-development/corporate-websites",
-        description: "Modern, fast websites that convert.",
+        label: "Custom Enterprise Software",
+        href: "/web-development#custom-enterprise-software",
+        description: "Tailored enterprise software for core business operations.",
+        children: [
+          {
+            label: "Custom ERP & CRM Systems",
+            href: "/web-development/custom-erp-crm",
+            description: "Tailored resource planning and customer relationship systems.",
+          },
+          {
+            label: "HR & Payroll Management Software",
+            href: "/web-development/hr-payroll",
+            description: "Automated attendance, leave, salary and tax management.",
+          },
+          {
+            label: "Inventory & Sales Tracking Apps",
+            href: "/web-development/inventory-sales-tracking",
+            description: "Real-time stock control, POS and sales analytics.",
+          },
+        ],
       },
       {
-        label: "E-commerce Solutions",
-        href: "/web-development/ecommerce-solutions",
-        description: "Online stores built to scale.",
+        label: "Modern Web Platforms",
+        href: "/web-development#modern-web-platforms",
+        description: "Full-stack Next.js, React and corporate portal platforms.",
+        children: [
+          {
+            label: "Next.js & React Web Applications",
+            href: "/web-development/nextjs-react-apps",
+            description: "Fast, SEO-optimized web applications with modern UX.",
+          },
+          {
+            label: "High-Performance Corporate Websites",
+            href: "/web-development/corporate-websites",
+            description: "Conversion-optimized corporate sites with 95+ Lighthouse scores.",
+          },
+          {
+            label: "Custom Portal Development",
+            href: "/web-development/custom-portal-development",
+            description: "Secure client portals, vendor dashboards and partner portals.",
+          },
+        ],
       },
       {
-        label: "Custom Web Apps",
-        href: "/web-development/custom-web-apps",
-        description: "Tailored web applications for your workflow.",
+        label: "Headless & E-Commerce",
+        href: "/web-development#headless-ecommerce",
+        description: "PayloadCMS architecture, headless commerce and API solutions.",
+        children: [
+          {
+            label: "PayloadCMS Backend Architecture",
+            href: "/web-development/payloadcms-backend",
+            description: "Modern TypeScript-first CMS and database architecture.",
+          },
+          {
+            label: "Scalable Headless E-Commerce",
+            href: "/web-development/scalable-headless-ecommerce",
+            description: "High-speed storefronts with bKash, Nagad and courier APIs.",
+          },
+          {
+            label: "REST & GraphQL API Solutions",
+            href: "/web-development/rest-graphql-api",
+            description: "High-throughput API design, integrations and microservices.",
+          },
+        ],
       },
       {
-        label: "CMS Management",
-        href: "/web-development/cms-management",
-        description: "WordPress, Strapi and headless CMS support.",
+        label: "UI/UX & Frontend Experience",
+        href: "/web-development#ui-ux-frontend",
+        description: "Product design, Core Web Vitals and design systems.",
+        children: [
+          {
+            label: "Enterprise Product UI/UX Design",
+            href: "/web-development/enterprise-ui-ux",
+            description: "User research, wireframing and interactive Figma prototypes.",
+          },
+          {
+            label: "Web Performance & Core Web Vitals Optimization",
+            href: "/web-development/web-performance-core-web-vitals",
+            description: "Speed, INP/LCP optimization for search performance.",
+          },
+          {
+            label: "Design System & Component Library",
+            href: "/web-development/design-system-component-library",
+            description: "Scalable UI component libraries and brand styleguides.",
+          },
+        ],
       },
     ],
   },
@@ -149,10 +222,6 @@ export const MAIN_NAV: NavItem[] = [
         description: "Grow brand visibility on social channels.",
       },
     ],
-  },
-  {
-    label: "Blog",
-    href: "/blog",
   },
   {
     label: "Contact Us",

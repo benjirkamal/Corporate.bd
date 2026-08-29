@@ -4,7 +4,7 @@ import { ArrowRight, CheckCircle2 } from "lucide-react"
 import { PageHero } from "@/components/page-hero"
 import { CTASection } from "@/components/cta-section"
 import { DynamicIcon } from "@/components/dynamic-icon"
-import type { ServiceCategory } from "@/lib/services-data"
+import type { ServiceCategory, Service, ServiceFeature } from "@/lib/services-data"
 import { SITE_CONFIG } from "@/lib/site-config"
 
 type CategoryPageTemplateProps = {
@@ -12,14 +12,66 @@ type CategoryPageTemplateProps = {
 }
 
 export function CategoryPageTemplate({ category }: CategoryPageTemplateProps) {
+  const jsonLdCategory = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: `${category.title} Services in Bangladesh`,
+    description: category.subtitle || category.description,
+    url: `${SITE_CONFIG.url}/${category.slug}`,
+    provider: {
+      "@type": "Organization",
+      name: SITE_CONFIG.name,
+      url: SITE_CONFIG.url,
+      telephone: SITE_CONFIG.phone,
+    },
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: category.services.map((service, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: service.title,
+        url: `${SITE_CONFIG.url}/${category.slug}/${service.slug}`,
+        description: service.subtitle || service.description,
+      })),
+    },
+  }
+
+  const jsonLdBreadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: SITE_CONFIG.url,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: category.title,
+        item: `${SITE_CONFIG.url}/${category.slug}`,
+      },
+    ],
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdCategory) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
+      />
+
       <PageHero
         eyebrow="Services"
         title={category.title}
-        description={category.subtitle}
-        image={category.heroImage}
-        imageAlt={`${category.title} services`}
+        description={category.subtitle || category.description || ""}
+        image={category.heroImage || "/placeholder.jpg"}
+        imageAlt={`${category.title} Services - Corporate.bd`}
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: category.title },
@@ -86,7 +138,7 @@ export function CategoryPageTemplate({ category }: CategoryPageTemplateProps) {
           </div>
 
           <div className="mt-10 grid gap-5 md:grid-cols-2">
-            {category.services.map((service) => (
+            {category.services.map((service: Service) => (
               <Link
                 key={service.slug}
                 href={`/${category.slug}/${service.slug}`}
@@ -94,7 +146,7 @@ export function CategoryPageTemplate({ category }: CategoryPageTemplateProps) {
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/5 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition">
-                    <DynamicIcon name={service.icon} className="h-6 w-6" />
+                    <DynamicIcon name={service.icon || "HelpCircle"} className="h-6 w-6" />
                   </div>
                   <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition" />
                 </div>
@@ -104,12 +156,12 @@ export function CategoryPageTemplate({ category }: CategoryPageTemplateProps) {
                     {service.title}
                   </h3>
                   <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                    {service.subtitle}
+                    {service.subtitle || service.description || ""}
                   </p>
                 </div>
 
                 <ul className="mt-2 space-y-1.5">
-                  {service.features.slice(0, 3).map((feature) => (
+                  {(service.features || []).slice(0, 3).map((feature: ServiceFeature) => (
                     <li key={feature.title} className="flex items-center gap-2 text-xs text-muted-foreground">
                       <span className="h-1 w-1 rounded-full bg-accent" />
                       {feature.title}

@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next"
 import { Inter, Source_Serif_4 } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
@@ -114,7 +113,6 @@ export default function RootLayout({
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />
-        {process.env.NODE_ENV === "production" && <Analytics />}
         <GoogleAnalytics gaId="G-W10R4TZ7YJ" />
       </body>
     </html>

@@ -1,29 +1,69 @@
 import Link from "next/link"
-import { Mail, Phone, MapPin, Facebook, Linkedin, Twitter, Youtube } from "lucide-react"
+import { Mail, Phone, MapPin, Clock, Facebook, Linkedin, Twitter, Youtube } from "lucide-react"
 import { SITE_CONFIG } from "@/lib/site-config"
-import { MAIN_NAV } from "@/lib/navigation"
+
+const FOOTER_COLUMNS = [
+  {
+    title: "Domain & Hosting",
+    links: [
+      { label: "Domain Services", href: "/digital-infrastructure/domain-services" },
+      { label: "Corporate Email", href: "/digital-infrastructure/corporate-email" },
+      { label: "Cloud Hosting", href: "/digital-infrastructure/cloud-hosting" },
+      { label: "VPS Hosting", href: "/digital-infrastructure/vps-hosting" },
+      { label: "SSL & Security", href: "/digital-infrastructure/ssl-security" },
+    ],
+  },
+  {
+    title: "Software & Web",
+    links: [
+      { label: "Custom ERP & CRM", href: "/web-development/custom-erp-crm" },
+      { label: "HR & Payroll Software", href: "/web-development/hr-payroll" },
+      { label: "E-Commerce Solutions", href: "/web-development/ecommerce-solutions" },
+      { label: "Custom Web Apps", href: "/web-development/custom-web-apps" },
+      { label: "Corporate Websites", href: "/web-development/corporate-websites" },
+    ],
+  },
+  {
+    title: "Legal Compliance",
+    links: [
+      { label: "Company Formation", href: "/legal-compliance/company-formation" },
+      { label: "Trade License", href: "/legal-compliance/trade-license" },
+      { label: "Tax & VAT Services", href: "/legal-compliance/tax-vat" },
+      { label: "Intellectual Property", href: "/legal-compliance/intellectual-property" },
+      { label: "Legal Advisory", href: "/legal-compliance" },
+    ],
+  },
+  {
+    title: "IT & Growth",
+    links: [
+      { label: "IT AMC Support", href: "/managed-it-services/amc" },
+      { label: "Server Administration", href: "/managed-it-services/server-administration" },
+      { label: "AI & Workflow Bots", href: "/managed-it-services/ai-automation" },
+      { label: "Local SEO & Maps", href: "/seo/local-seo" },
+      { label: "Product & E-Com SEO", href: "/seo/product-seo" },
+    ],
+  },
+]
 
 export function SiteFooter() {
-  const serviceCategories = MAIN_NAV.filter(
-    (item) => item.children && item.children.length > 0
-  )
-
   return (
     <footer className="bg-primary text-primary-foreground mt-24">
       <div className="container mx-auto px-4 py-16">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-12">
-          {/* Brand */}
-          <div className="lg:col-span-4">
-            <Link href="/" className="flex items-center gap-2 font-serif text-2xl font-bold">
-              <div className="flex h-10 w-10 items-center justify-center rounded-md bg-accent text-accent-foreground font-sans text-sm font-bold">
-                C.
-              </div>
-              {SITE_CONFIG.name}
-            </Link>
-            <p className="mt-4 text-sm leading-relaxed text-primary-foreground/80 max-w-sm">
-              {SITE_CONFIG.description}
-            </p>
-            <div className="mt-6 flex items-center gap-3">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-12 items-start">
+          {/* Brand Column */}
+          <div className="lg:col-span-3 flex flex-col justify-between">
+            <div>
+              <Link href="/" className="flex items-center gap-2 font-serif text-2xl font-bold">
+                <div className="flex h-10 w-10 items-center justify-center rounded-md bg-accent text-accent-foreground font-sans text-sm font-bold shadow-sm">
+                  C.
+                </div>
+                {SITE_CONFIG.name}
+              </Link>
+              <p className="mt-4 text-sm leading-relaxed text-primary-foreground/80">
+                End-to-end digital infrastructure, custom software, legal compliance, managed IT, and SEO for high-growth businesses in Bangladesh.
+              </p>
+            </div>
+            <div className="mt-6 flex items-center gap-2.5">
               <a
                 href={SITE_CONFIG.social.facebook}
                 aria-label="Facebook"
@@ -55,21 +95,21 @@ export function SiteFooter() {
             </div>
           </div>
 
-          {/* Service columns */}
-          <div className="lg:col-span-6 grid grid-cols-2 gap-8 md:grid-cols-3">
-            {serviceCategories.slice(0, 3).map((category) => (
-              <div key={category.label}>
-                <h3 className="font-serif font-semibold text-sm tracking-wide uppercase text-accent">
-                  {category.label}
+          {/* Leveled Navigation Columns */}
+          <div className="lg:col-span-6 grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4">
+            {FOOTER_COLUMNS.map((column) => (
+              <div key={column.title} className="flex flex-col">
+                <h3 className="font-serif font-semibold text-xs tracking-wider uppercase text-accent h-6 flex items-center">
+                  {column.title}
                 </h3>
                 <ul className="mt-4 space-y-2.5">
-                  {category.children!.map((child) => (
-                    <li key={child.label}>
+                  {column.links.map((link) => (
+                    <li key={link.label} className="leading-tight">
                       <Link
-                        href={child.href}
-                        className="text-sm text-primary-foreground/75 hover:text-primary-foreground transition"
+                        href={link.href}
+                        className="text-sm text-primary-foreground/75 hover:text-primary-foreground hover:underline underline-offset-4 transition whitespace-nowrap"
                       >
-                        {child.label}
+                        {link.label}
                       </Link>
                     </li>
                   ))}
@@ -78,30 +118,35 @@ export function SiteFooter() {
             ))}
           </div>
 
-          {/* Contact */}
-          <div className="lg:col-span-2">
-            <h3 className="font-serif font-semibold text-sm tracking-wide uppercase text-accent">
+          {/* Reach Us Column - Perfectly Leveled with other columns */}
+          <div className="lg:col-span-3 flex flex-col">
+            <h3 className="font-serif font-semibold text-xs tracking-wider uppercase text-accent h-6 flex items-center">
               Reach Us
             </h3>
-            <ul className="mt-4 space-y-3 text-sm text-primary-foreground/85">
-              <li className="flex items-start gap-2.5">
+            <ul className="mt-4 space-y-2.5 text-sm text-primary-foreground/85">
+              <li className="flex items-start gap-2 leading-tight">
                 <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0 text-accent" />
-                <span>
-                  {SITE_CONFIG.address.line1}, {SITE_CONFIG.address.line2},{" "}
-                  {SITE_CONFIG.address.city} {SITE_CONFIG.address.postalCode}
+                <span className="text-sm text-primary-foreground/80">
+                  {SITE_CONFIG.address.line1} {SITE_CONFIG.address.line2}, {SITE_CONFIG.address.city}-{SITE_CONFIG.address.postalCode}
                 </span>
               </li>
-              <li className="flex items-center gap-2.5">
+              <li className="flex items-center gap-2 leading-tight">
                 <Phone className="h-4 w-4 flex-shrink-0 text-accent" />
-                <a href={`tel:${SITE_CONFIG.phone.replace(/\s/g, "")}`} className="hover:text-primary-foreground transition">
+                <a href={`tel:${SITE_CONFIG.phone.replace(/\s/g, "")}`} className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition">
                   {SITE_CONFIG.phone}
                 </a>
               </li>
-              <li className="flex items-center gap-2.5">
+              <li className="flex items-center gap-2 leading-tight">
                 <Mail className="h-4 w-4 flex-shrink-0 text-accent" />
-                <a href={`mailto:${SITE_CONFIG.email}`} className="hover:text-primary-foreground transition">
+                <a href={`mailto:${SITE_CONFIG.email}`} className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition">
                   {SITE_CONFIG.email}
                 </a>
+              </li>
+              <li className="flex items-center gap-2 leading-tight">
+                <Clock className="h-4 w-4 flex-shrink-0 text-accent" />
+                <span className="text-xs text-primary-foreground/75">
+                  {SITE_CONFIG.workingHours}
+                </span>
               </li>
             </ul>
           </div>
@@ -115,9 +160,6 @@ export function SiteFooter() {
             &copy; {new Date().getFullYear()} {SITE_CONFIG.name}. All rights reserved.
           </p>
           <div className="flex items-center gap-5">
-            <Link href="/blog" className="hover:text-primary-foreground transition">
-              Blog
-            </Link>
             <Link href="/contact" className="hover:text-primary-foreground transition">
               Contact
             </Link>
