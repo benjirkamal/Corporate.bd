@@ -15,8 +15,8 @@ export const SITE_CONFIG = {
   email: "info @ corporate.bd",
   supportEmail: "support @ corporate.bd",
   salesEmail: "sales @ corporate.bd",
-  phone: "+880 1515-676635",
-  whatsapp: "+880 1515-676635",
+  phone: "+880 1721-333633",
+  whatsapp: "+880 1721-333633",
   address: {
     line1: "67, Motijheel C/A",
     line2: "(Nearest Metro Station)",

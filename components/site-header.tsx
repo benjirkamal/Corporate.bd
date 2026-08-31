@@ -115,19 +115,21 @@ export function SiteHeader() {
           <p className="opacity-90">
             Enterprise digital services for Bangladesh — since {SITE_CONFIG.founded}
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-5">
             <a
               href={`mailto:${SITE_CONFIG.email}`}
-              className="opacity-90 hover:opacity-100 transition"
+              className="opacity-90 hover:opacity-100 transition hidden sm:inline"
             >
               {SITE_CONFIG.email}
             </a>
             <a
-              href={`tel:${SITE_CONFIG.phone.replace(/\s/g, "")}`}
-              className="flex items-center gap-1.5 opacity-90 hover:opacity-100 transition"
+              href={`https://wa.me/${SITE_CONFIG.whatsapp.replace(/\D/g, "")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-emerald-300 hover:text-emerald-200 transition font-medium"
             >
-              <Phone className="h-3 w-3" />
-              {SITE_CONFIG.phone}
+              <span className="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span>WhatsApp: {SITE_CONFIG.whatsapp}</span>
             </a>
           </div>
         </div>

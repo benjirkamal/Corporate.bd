@@ -3,6 +3,7 @@ import { Inter, Source_Serif_4 } from "next/font/google"
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
+import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { SITE_CONFIG } from "@/lib/site-config"
 import "./globals.css"
 
@@ -113,6 +114,7 @@ export default function RootLayout({
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />
+        <FloatingWhatsApp />
         <GoogleAnalytics gaId="G-W10R4TZ7YJ" />
       </body>
     </html>
