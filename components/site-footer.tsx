@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Mail, Phone, MapPin, Clock, MessageSquare, Facebook, Linkedin, Twitter, Youtube } from "lucide-react"
+import { Mail, Phone, MapPin, Clock, Facebook, Linkedin, Twitter, Youtube } from "lucide-react"
 import { SITE_CONFIG } from "@/lib/site-config"
 
 const FOOTER_COLUMNS = [
@@ -34,13 +34,13 @@ const FOOTER_COLUMNS = [
     ],
   },
   {
-    title: "IT & Growth",
+    title: "IT & Tours",
     links: [
       { label: "IT AMC Support", href: "/managed-it-services/amc" },
       { label: "Server Administration", href: "/managed-it-services/server-administration" },
       { label: "AI & Workflow Bots", href: "/managed-it-services/ai-automation" },
-      { label: "Local SEO & Maps", href: "/seo/local-seo" },
-      { label: "Product & E-Com SEO", href: "/seo/product-seo" },
+      { label: "Dhaka City Guided Tour", href: "/tour/dhaka-tour" },
+      { label: "Enterprise SEO Services", href: "/seo" },
     ],
   },
 ]
@@ -134,17 +134,6 @@ export function SiteFooter() {
                 <Phone className="h-4 w-4 flex-shrink-0 text-accent" />
                 <a href={`tel:${SITE_CONFIG.phone.replace(/\s/g, "")}`} className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition">
                   {SITE_CONFIG.phone}
-                </a>
-              </li>
-              <li className="flex items-center gap-2 leading-tight">
-                <MessageSquare className="h-4 w-4 flex-shrink-0 text-emerald-400" />
-                <a
-                  href={`https://wa.me/${SITE_CONFIG.whatsapp.replace(/\D/g, "")}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-emerald-300 hover:text-emerald-200 transition font-medium"
-                >
-                  WhatsApp: {SITE_CONFIG.whatsapp}
                 </a>
               </li>
               <li className="flex items-center gap-2 leading-tight">

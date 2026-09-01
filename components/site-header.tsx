@@ -31,6 +31,12 @@ import {
   FileText,
   Calculator,
   LayoutGrid,
+  Compass,
+  Plane,
+  MapPin,
+  Palmtree,
+  Ticket,
+  Luggage,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -38,6 +44,10 @@ import { MAIN_NAV } from "@/lib/navigation"
 
 function getNavIcon(label: string) {
   const l = label.toLowerCase()
+  if (l.includes("tour") || l.includes("travel") || l.includes("trip")) return Compass
+  if (l.includes("flight") || l.includes("air") || l.includes("ticket") || l.includes("visa")) return Plane
+  if (l.includes("domestic") || l.includes("resort") || l.includes("hotel") || l.includes("destination")) return Palmtree
+  if (l.includes("mice") || l.includes("retreat") || l.includes("itinerary") || l.includes("group")) return Luggage
   if (l.includes("erp") || l.includes("crm") || l.includes("database")) return Database
   if (l.includes("hr") || l.includes("payroll") || l.includes("users")) return Users
   if (l.includes("inventory") || l.includes("sales") || l.includes("package") || l.includes("stock")) return Package

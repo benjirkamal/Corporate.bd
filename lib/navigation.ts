@@ -1,6 +1,6 @@
 // =====================================================
 // NAVIGATION STRUCTURE
-// সকল মেনু এবং সাব-মেনু এখানে এডিট করুন
+// Edit all menus and sub-menus here
 // =====================================================
 
 export type NavItem = {
@@ -220,6 +220,18 @@ export const MAIN_NAV: NavItem[] = [
         label: "Social Media Management",
         href: "/seo/social-media-management",
         description: "Grow brand visibility on social channels.",
+      },
+    ],
+  },
+  {
+    label: "Tour",
+    href: "/tour/dhaka-tour",
+    description: "Guided historical, cultural, and modern Dhaka city tours.",
+    children: [
+      {
+        label: "Dhaka Tour",
+        href: "/tour/dhaka-tour",
+        description: "Full-day & half-day guided Old Dhaka heritage, Buriganga boat cruise & city sightseeing.",
       },
     ],
   },

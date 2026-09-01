@@ -287,7 +287,7 @@ export function ServicePageTemplate({ service, category }: ServicePageTemplatePr
             </div>
           ))
         ) : (
-          // ডিফল্ট স্ট্যাটাস যদি ডাটা না থাকে
+          // Default stats fallback
           <>
             <div className="rounded-2xl bg-muted p-8 text-center border border-border">
               <div className="text-3xl font-bold text-primary">99.9%</div>

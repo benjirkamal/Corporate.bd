@@ -51,7 +51,7 @@ icons: {
       { url: "/favicon.svg", sizes: "48x48" }, 
     ],
     apple: [
-      { url: "/favicon.svg", sizes: "48x48" }, // আইফোনের জন্যও সাময়িকভাবে এটি কাজ করবে
+      { url: "/favicon.svg", sizes: "48x48" },
     ],
   },
   openGraph: {

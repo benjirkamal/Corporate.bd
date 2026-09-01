@@ -1,6 +1,5 @@
 // =====================================================
 // SERVICES DATA
-// প্রতিটি সার্ভিস পেইজের কন্টেন্ট এখানে এডিট করুন
 // Edit content for every service page in this file
 // =====================================================
 
@@ -107,7 +106,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
     { title: "Easy Management Dashboard", description: "Simplify your life with our intuitive interface, allowing you to manage multiple domains, DNS settings, and renewals in one place." },
     { title: "Proactive Renewal Reminders", description: "Never lose your domain. We provide automated alerts and managed renewal services so your online presence remains uninterrupted." }
   ],
-        featuresHeading: "Everything you need to manage your domain portfolio", // ফিচার টাইটেল
+        featuresHeading: "Everything you need to manage your domain portfolio",
         features: [
           {
             title: ".bd & .com.bd Registration",
@@ -223,7 +222,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
     { title: "Scalable Infrastructure", description: "Designed to grow with you, our flexible platform allows for effortless scaling of user accounts and storage capacity, backed by a 99.9% uptime guarantee to ensure your team stays connected 24/7." }
   ],
 
-        featuresHeading: "Professional Business Email Solutions & Features", // ফিচার টাইটেল
+        featuresHeading: "Professional Business Email Solutions & Features",
         features: [
           {
             title: "Custom Domain Email",
@@ -337,7 +336,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
     { title: "Enterprise-Grade Security", description: "Protect your assets with advanced firewalls, real-time DDoS mitigation, and automated daily backups for total peace of mind." },
     { title: "Scale with Expert Support", description: "Grow your CPU and RAM instantly as your traffic increases, backed by 24/7 proactive monitoring from our local certified engineers." }
   ],
-        featuresHeading: "Everything you need to power your digital infrastructure", // ফিচার টাইটেল
+        featuresHeading: "Everything you need to power your digital infrastructure",
               features: [
           {
             title: "Shared & Reseller Hosting",
@@ -451,7 +450,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
     { title: "Expert Installation", description: "Free technical support for CSR generation and SSL installation on any server." },
     { title: "Local Support", description: "Dedicated security experts available in Bangladesh for instant troubleshooting." }
   ],
-        featuresHeading: "Why Your Business Needs an SSL Certificate?", // ফিচার টাইটেল
+        featuresHeading: "Why Your Business Needs an SSL Certificate?",
 
         features: [
           {
@@ -687,7 +686,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
     { title: "Tailored, Pixel-Perfect Design", description: "First impressions matter in the corporate world. We write custom, clean code using utility-first styling to craft a unique, highly responsive digital identity for your brand. Your website will look flawless on every device, free from the rigid constraints of generic templates." },
     { title: "End-to-End Professional Setup", description: "We provide a complete digital foundation so you can focus on running your business. From integrating advanced technical SEO that drives organic traffic to configuring your custom corporate domains and secure business emails, we deliver a fully integrated, hassle-free solution." }
   ],
-        featuresHeading: "Premium Business & Corporate Web Solutions in Bangladesh", // ফিচার টাইটেল
+        featuresHeading: "Premium Business & Corporate Web Solutions in Bangladesh",
 
         features: [
           {
@@ -801,7 +800,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
     { title: "High-Converting Design", description: "Turn clicks into customers. We build lightning-fast, mobile-friendly storefronts with seamless checkout experiences designed to maximize your sales." },
     { title: "Ironclad Security", description: "Build instant buyer trust. Keep your online store safe with secure payment gateways, robust data protection, and reliable uptime." }
   ],
-        featuresHeading: "Everything You Need to Sell Online in Bangladesh", // ফিচার টাইটেল
+        featuresHeading: "Everything You Need to Sell Online in Bangladesh",
 
 
         features: [
@@ -915,7 +914,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
     { title: "Robust Security & Architecture", description: "Using modern frameworks like Laravel and React, we ensure your application is fortified against vulnerabilities and can handle thousands of concurrent users with ease" },
     { title: "Agile Development & Support", description: "Our iterative process keeps you involved at every stage. Plus, our local team provides 24/7 proactive maintenance to ensure your application stays ahead of the curve." }
   ],
-        featuresHeading: "Everything you need to build and scale your custom web application", // ফিচার টাইটেল
+        featuresHeading: "Everything you need to build and scale your custom web application",
 
         features: [
           {
@@ -1030,7 +1029,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
     { title: "Hardened Security & Backups", description: "CMS platforms are frequent targets for hackers. We implement enterprise-level security layers and automated daily backups to keep your content safe 24/7." },
     { title: "Performance First (Speed Optimization)", description: "We eliminate 'bloat' by using lean coding and premium optimization tools, ensuring your WordPress or Joomla site loads instantly on any device." }
   ],
-        featuresHeading: "Everything you need to build and scale your custom web application", // ফিচার টাইটেল        
+        featuresHeading: "Everything you need to build and scale your custom web application",        
 
         features: [
           {
@@ -1671,7 +1670,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
     { title: "Post-Registration Care", description: "We don't just hand you the papers; we stay with you for annual returns, tax filings, and ongoing compliance audits." },
     { title: "Tailored Structuring", description: "Whether it’s a Private Limited, Partnership, or Sole Proprietorship, we help you choose the legal structure that minimizes liability and maximizes profit." }
   ],
-        featuresHeading: "Building the Legal Foundation for Your Future Enterprise", // ফিচার টাইটেল
+        featuresHeading: "Building the Legal Foundation for Your Future Enterprise",
         features: [
           {
             title: "Name Clearance",
@@ -1784,7 +1783,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
     { title: "Rapid Processing", description: "Our deep network and streamlined documentation process reduce the typical waiting time, helping you get your license book in record speed." },
     { title: "Automated Renewal Tracking", description: "Never worry about penalties again. We keep track of your license validity and notify you well in advance of the June-July renewal window." }
   ],
-        featuresHeading: "Building the Legal Foundation for Your Future Enterprise", // ফিচার টাইটেল
+        featuresHeading: "Building the Legal Foundation for Your Future Enterprise",
 
         features: [
           {
@@ -1897,7 +1896,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
     { title: "Strategic Tax Planning", description: "We don’t just record your past; we plan your future by identifying legitimate ways to optimize your tax structure according to the Income Tax Act." },
     { title: "Local NBR Expertise", description: "Our consultants have deep-rooted experience with the National Board of Revenue (NBR) protocols, ensuring your files move smoothly through the system." }
   ],
-        featuresHeading: "Building the Legal Foundation for Your Future Enterprise", // ফিচার টাইটেল
+        featuresHeading: "Building the Legal Foundation for Your Future Enterprise",
 
 
         features: [
@@ -2012,7 +2011,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
     { title: "Global Standard Enforcement", description: "Our team understands both local DPDT (Department of Patents, Designs and Trademarks) protocols and international IP standards." },
     { title: "Infringement Monitoring", description: "We provide ongoing support to detect and challenge unauthorized use of your IP, including issuing legal cease-and-desist notices." }
   ],
-        featuresHeading: "Comprehensive Intellectual Property Solutions", // ফিচার টাইটেল
+        featuresHeading: "Comprehensive Intellectual Property Solutions",
         features: [
           {
             title: "Trademark Registration",
@@ -2141,7 +2140,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
     { title: "Quarterly System Health Reports", description: "Transparency is key. You receive detailed reports every quarter showing the performance and health score of your IT environment." },
     { title: "Scalable Support Models", description: "Whether you are a small startup with 10 computers or a large enterprise with multiple servers, our AMC packages scale with your growth." }
   ],
-          featuresHeading: "Our Managed IT Support & Infrastructure Maintenance Framework", // ফিচার টাইটেল
+          featuresHeading: "Our Managed IT Support & Infrastructure Maintenance Framework",
         features: [
           {
             title: "Helpdesk & Ticketing",
@@ -2255,7 +2254,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
     { title: "Engineering and Compliance", description: "We utilize high-level engineering to eliminate performance bottlenecks and ensure all server configurations meet international ISO standards and local data privacy regulations." },
     { title: "Disaster Readiness", description: "We implement fail-safe backup strategies, such as the 3-2-1 rule, to guarantee data integrity and enable rapid recovery in the event of a system failure." }
   ],
-          featuresHeading: "End-to-End Server Administration & Managed Infrastructure Solutions", // ফিচার টাইটেল
+          featuresHeading: "End-to-End Server Administration & Managed Infrastructure Solutions",
         features: [
           {
             title: "Provisioning & Setup",
@@ -2602,7 +2601,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
     { title: "Data-Driven Geo-Targeting", description: "We analyze local search volumes down to specific neighborhoods and thanas (e.g., Gulshan, Banani, Dhanmondi) to capture the most relevant traffic." },
     { title: "Omnichannel Local Presence", description: "We don't just stop at Google. We optimize your presence on Apple Maps, Bing Places, and local social media check-ins." }
   ],
-          featuresHeading: "Hyper-Local SEO Strategies That Drive Sales", // ফিচার টাইটেল
+          featuresHeading: "Hyper-Local SEO Strategies That Drive Sales",
 
         features: [
           {
@@ -2717,7 +2716,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
     { title: "Conversion Rate Focus (CRO)", description: "Getting traffic is only half the battle. We analyze user behavior to suggest layout and copy improvements that turn visitors into paying customers." },
     { title: "Out-of-Stock Management Strategy", description: "We ensure you don't lose SEO juice or frustrate customers when products go out of stock, using smart redirects and waitlist strategies instead of dead 404 pages." }
   ],
-          featuresHeading: "Strategic Product SEO Framework to Drive Organic Sales", // ফিচার টাইটেল
+          featuresHeading: "Strategic Product SEO Framework to Drive Organic Sales",
         features: [
           {
             title: "Keyword Strategy",
@@ -2936,7 +2935,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
     { title: "Monthly Performance Insights", description: "No more guessing. You receive detailed reports showing growth, engagement rates, and the actual business impact of our activities." },
     { title: "Agile Content Calendar", description: "We stay ahead of trends. Our flexible scheduling ensures your brand participates in viral moments while maintaining a consistent long-term message." }
   ],
-          featuresHeading: "Strategic Social Media Management to Turn Engagement into Leads", // ফিচার টাইটেল
+          featuresHeading: "Strategic Social Media Management to Turn Engagement into Leads",
 
 
         features: [
