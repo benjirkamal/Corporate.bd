@@ -97,7 +97,7 @@ export const metadata: Metadata = {
 const TOP_TOURIST_SPOTS = [
   {
     id: "lalbagh-fort",
-    name: "Lalbagh Fort (Mughal Fortress & Pari Bibi Mausoleum)",
+    name: "Lalbagh Fort (Lalbagh Kella)",
     era: "1678 AD (Mughal Period)",
     location: "Lalbagh, Old Dhaka",
     image: "/images/tour/lalbagh-fort.jpg",
@@ -109,9 +109,9 @@ const TOP_TOURIST_SPOTS = [
   },
   {
     id: "ahsan-manzil",
-    name: "Ahsan Manzil (The Pink Palace & Nawab Museum)",
+    name: "Ahsan Manzil (Pink Palace)",
     era: "1872 AD (Nawab Period)",
-    location: "Kumartoli, Sadarghat, Old Dhaka",
+    location: "Sadarghat, Old Dhaka",
     image: "/images/tour/ahsan-manzil.jpg",
     alt: "Ahsan Manzil Pink Palace on Buriganga riverfront Old Dhaka",
     description:
@@ -121,7 +121,7 @@ const TOP_TOURIST_SPOTS = [
   },
   {
     id: "national-parliament",
-    name: "National Parliament House (Louis Kahn Masterpiece)",
+    name: "National Parliament House (Jatiya Sangsad Bhaban)",
     era: "Modern Masterpiece (1982)",
     location: "Sher-e-Bangla Nagar, Dhaka",
     image: "/images/tour/national-parliament.jpg",
@@ -133,9 +133,9 @@ const TOP_TOURIST_SPOTS = [
   },
   {
     id: "curzon-hall",
-    name: "Curzon Hall (Dhaka University Indo-Saracenic Heritage)",
+    name: "Curzon Hall (Dhaka University)",
     era: "1904 AD (British Colonial)",
-    location: "Dhaka University Campus",
+    location: "Dhaka University Campus, Dhaka",
     image: "/images/tour/curzon-hall.jpg",
     alt: "Curzon Hall British colonial red brick architecture at Dhaka University campus",
     description:
@@ -145,9 +145,9 @@ const TOP_TOURIST_SPOTS = [
   },
   {
     id: "panam-city",
-    name: "Panam Nagar & Sonargaon Ancient Capital Day Trip",
+    name: "Panam Nagar (Panam City)",
     era: "15th - 19th Century (Medieval Capital)",
-    location: "Sonargaon (30 km from Dhaka)",
+    location: "Sonargaon, Narayanganj",
     image: "/images/tour/panam-city.jpg",
     alt: "Panam Nagar lost city colonial merchant mansions in Sonargaon Dhaka",
     description:
@@ -157,9 +157,9 @@ const TOP_TOURIST_SPOTS = [
   },
   {
     id: "buriganga-river",
-    name: "Sadarghat Riverfront & Buriganga River Wooden Boat Cruise",
+    name: "Sadarghat & Buriganga Riverfront",
     era: "Historic Lifeline of Dhaka",
-    location: "Sadarghat River Port",
+    location: "Sadarghat, Old Dhaka",
     image: "/images/tour/buriganga-river.jpg",
     alt: "Traditional wooden country boat cruising on Buriganga river near Sadarghat Dhaka",
     description:
@@ -169,7 +169,7 @@ const TOP_TOURIST_SPOTS = [
   },
   {
     id: "star-mosque",
-    name: "Star Mosque (Tara Masjid Chini-Tikri Porcelain Landmark)",
+    name: "Star Mosque (Tara Masjid)",
     era: "Early 19th Century",
     location: "Armanitola, Old Dhaka",
     image: "/images/tour/star-mosque.jpg",
@@ -181,9 +181,9 @@ const TOP_TOURIST_SPOTS = [
   },
   {
     id: "old-dhaka-kacchi",
-    name: "Old Dhaka Food Trail (Nazira Bazar & Chawkbazar Street Food)",
+    name: "Nazira Bazar & Chawkbazar (Food Streets)",
     era: "Century-Old Culinary Heritage",
-    location: "Nazira Bazar & Chawkbazar",
+    location: "Nazira Bazar, Old Dhaka",
     image: "/images/tour/old-dhaka-kacchi.jpg",
     alt: "Authentic Old Dhaka Royal Kacchi Biryani and Borhani culinary heritage trail",
     description:
