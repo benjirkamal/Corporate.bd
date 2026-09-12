@@ -160,6 +160,9 @@ export function SiteFooter() {
             &copy; {new Date().getFullYear()} {SITE_CONFIG.name}. All rights reserved.
           </p>
           <div className="flex items-center gap-5">
+            <Link href="/blog" className="hover:text-primary-foreground transition">
+              Blog
+            </Link>
             <Link href="/contact" className="hover:text-primary-foreground transition">
               Contact
             </Link>

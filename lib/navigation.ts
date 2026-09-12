@@ -236,6 +236,10 @@ export const MAIN_NAV: NavItem[] = [
     ],
   },
   {
+    label: "Blog",
+    href: "/blog",
+  },
+  {
     label: "Contact Us",
     href: "/contact",
   },
