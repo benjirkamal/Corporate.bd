@@ -8,7 +8,7 @@ export const post3DhakaTour: BlogPostDetail = {
     "An authoritative, beautifully detailed insider guide to exploring historic Dhaka. From Lalbagh Fort and Ahsan Manzil Pink Palace to Buriganga river cruises, Mughal delicacies, and Louis Kahn's modernist Parliament.",
   category: "tours-culture",
   categoryLabel: "Dhaka Tours",
-  date: "February 28, 2026",
+  date: "February 28",
   isoDate: "2026-02-28T09:00:00+06:00",
   readTime: "10 min read",
   image: "/images/tour/lalbagh-fort.jpg",

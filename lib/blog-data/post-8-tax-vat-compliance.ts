@@ -8,7 +8,7 @@ export const post8TaxVatCompliance: BlogPostDetail = {
     "An indispensable legal compliance handbook for business owners and CFOs in Bangladesh. Navigate the annual municipal trade licensing cycle, monthly VAT Form 9.1 filings, corporate income tax deadlines, and NBR withholding audits.",
   category: "business-legal",
   categoryLabel: "Legal & Corporate",
-  date: "January 20, 2026",
+  date: "January 20",
   isoDate: "2026-01-20T10:00:00+06:00",
   readTime: "10 min read",
   image: "/images/blog/tax-vat.jpg",

@@ -8,7 +8,7 @@ export const post5LocalSeo: BlogPostDetail = {
     "The complete tactical masterclass for capturing the Google Maps Local 3-Pack, optimizing Google Business Profile, dominating high-intent commercial keywords, and scaling local inquiries in Bangladesh.",
   category: "seo-growth",
   categoryLabel: "SEO & Growth",
-  date: "February 15, 2026",
+  date: "February 15",
   isoDate: "2026-02-15T09:00:00+06:00",
   readTime: "9 min read",
   image: "/images/blog/local-seo.jpg",

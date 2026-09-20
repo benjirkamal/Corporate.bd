@@ -8,7 +8,7 @@ export const post1BdDomain: BlogPostDetail = {
     "A comprehensive, step-by-step masterclass on BTCL approval, required NID/Trade License documents, DNS configuration, and avoiding common domain registration delays.",
   category: "cloud-domains",
   categoryLabel: "Domains & Cloud",
-  date: "March 10, 2026",
+  date: "March 10",
   isoDate: "2026-03-10T09:00:00+06:00",
   readTime: "9 min read",
   image: "/images/blog/domain-registration.jpg",

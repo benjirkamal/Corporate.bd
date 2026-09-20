@@ -8,7 +8,7 @@ export const post9TrademarkProtection: BlogPostDetail = {
     "An authoritative legal guide to intellectual property protection in Bangladesh. Master the DPDT trademark registration process: Nice classification, TM Form 1 filing, Trade Marks Journal publication, opposition defense, and anti-counterfeiting enforcement.",
   category: "business-legal",
   categoryLabel: "Legal & Corporate",
-  date: "January 12, 2026",
+  date: "January 12",
   isoDate: "2026-01-12T10:00:00+06:00",
   readTime: "9 min read",
   image: "/images/blog/trademark.jpg",

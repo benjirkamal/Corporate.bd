@@ -8,7 +8,7 @@ export const post7PaymentGateways: BlogPostDetail = {
     "An exhaustive developer and merchant guide to integrating bKash Tokenized Checkout, Nagad Direct Merchant API, and SSLCOMMERZ with resilient webhook validation, automated reconciliation, and zero payment leakage.",
   category: "web-tech",
   categoryLabel: "Web & Tech",
-  date: "January 29, 2026",
+  date: "January 29",
   isoDate: "2026-01-29T10:00:00+06:00",
   readTime: "9 min read",
   image: "/images/blog/payment-gateway.jpg",

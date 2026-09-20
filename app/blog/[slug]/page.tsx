@@ -224,7 +224,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </span>
               <span className="text-xs text-muted-foreground flex items-center gap-1.5">
                 <Calendar className="h-3.5 w-3.5" />
-                {post.date}
+                {post.date.replace(/,?\s*2026/g, "")}
               </span>
               <span className="text-xs text-muted-foreground flex items-center gap-1.5">
                 <Clock className="h-3.5 w-3.5" />

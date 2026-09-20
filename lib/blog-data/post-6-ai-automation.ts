@@ -8,7 +8,7 @@ export const post6AiAutomation: BlogPostDetail = {
     "A practical, executive guide to implementing LLMs, intelligent WhatsApp bots in Bengali & English, automated invoice OCR extraction, and document processing to streamline enterprise operations in Bangladesh.",
   category: "web-tech",
   categoryLabel: "Web & Tech",
-  date: "February 08, 2026",
+  date: "February 08",
   isoDate: "2026-02-08T10:00:00+06:00",
   readTime: "8 min read",
   image: "/images/blog/ai-automation.jpg",
@@ -51,7 +51,7 @@ export const post6AiAutomation: BlogPostDetail = {
       heading: "The Operational Bottleneck in Traditional Bangladeshi Firms",
       paragraphs: [
         "Across Dhaka's commercial districts—from Motijheel and Kawran Bazar to Gulshan and Banani—thousands of profitable enterprises face a common operational ceiling. Growth is constrained not by a shortage of customer demand, but by severe internal administrative friction: staff spending hours answering repetitive pricing inquiries across WhatsApp and Facebook Messenger, accountants manually retyping paper delivery challans into Excel spreadsheets, and sales teams misplacing customer inquiries during peak hours.",
-        "Historically, solving these bottlenecks required hiring expanding armies of entry-level data clerks, which dramatically inflated payroll overhead, introduced high human error rates, and led to sluggish response times. In 2026, modern Generative AI models (such as Gemini 1.5/2.0 and specialized open-source LLMs) have evolved from speculative experiments into battle-tested enterprise automation tools.",
+        "Historically, solving these bottlenecks required hiring expanding armies of entry-level data clerks, which dramatically inflated payroll overhead, introduced high human error rates, and led to sluggish response times. Today, modern Generative AI models (such as Gemini 1.5/2.0 and specialized open-source LLMs) have evolved from speculative experiments into battle-tested enterprise automation tools.",
         "By integrating AI workflow automations into daily operations, progressive Bangladeshi corporations are systematically eliminating repetitive administrative labor, enabling executive personnel to focus on strategic business development, client relationship management, and revenue expansion.",
       ],
       highlightBox: {

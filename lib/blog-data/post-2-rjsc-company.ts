@@ -8,7 +8,7 @@ export const post2RjscCompany: BlogPostDetail = {
     "A definitive legal masterclass on incorporating a Private Limited Company with RJSC Bangladesh. Covers name clearance, MoA/AoA drafting, inward remittances, bank encashment, and post-incorporation licensing.",
   category: "business-legal",
   categoryLabel: "Legal & Corporate",
-  date: "March 04, 2026",
+  date: "March 04",
   isoDate: "2026-03-04T10:00:00+06:00",
   readTime: "11 min read",
   image: "/images/blog/business-formation.jpg",

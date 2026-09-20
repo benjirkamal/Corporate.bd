@@ -8,7 +8,7 @@ export const post10DoctorWebsite: BlogPostDetail = {
     "An authoritative guide for specialist doctors, surgeons, professors, and clinical consultants in Bangladesh. Learn how to design a high-converting medical portfolio website, automate chamber appointment bookings, rank on Google Maps, and uphold BMDC ethical standards.",
   category: "web-tech",
   categoryLabel: "Web & Tech",
-  date: "March 15, 2026",
+  date: "March 15",
   isoDate: "2026-03-15T10:00:00+06:00",
   readTime: "10 min read",
   image: "/images/blog/doctor-portfolio-website.jpg",
@@ -17,7 +17,6 @@ export const post10DoctorWebsite: BlogPostDetail = {
     name: "Engr. Tanvir Ahmed",
     role: "Lead Systems Architect, Corporate.bd",
   },
-  featured: true,
   seoKeywords: [
     "doctor website design Bangladesh",
     "doctor portfolio website Dhaka",

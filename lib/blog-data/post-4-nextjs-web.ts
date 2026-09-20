@@ -8,7 +8,7 @@ export const post4NextjsWeb: BlogPostDetail = {
     "An architectural deep dive into how modern Next.js App Router, edge caching, and headless CMS deliver sub-second loading speeds, 95+ Core Web Vitals, and bank-grade security across Bangladesh's digital landscape.",
   category: "web-tech",
   categoryLabel: "Web & Tech",
-  date: "February 22, 2026",
+  date: "February 22",
   isoDate: "2026-02-22T10:00:00+06:00",
   readTime: "9 min read",
   image: "/images/blog/editorial.jpg",
@@ -49,7 +49,7 @@ export const post4NextjsWeb: BlogPostDetail = {
       id: "legacy-dilemma",
       heading: "The Hidden Cost of Monolithic CMS in High-Growth Firms",
       paragraphs: [
-        "For the past fifteen years, corporate websites in Bangladesh were predominantly erected on monolithic architectures—predominantly WordPress, Drupal, or legacy LAMP (Linux, Apache, MySQL, PHP) stacks hosted on unmanaged cPanel shared servers. While these platforms were sufficient for basic static brochures in the early 2010s, modern commercial enterprises face vastly higher stakes in 2026.",
+        "For the past fifteen years, corporate websites in Bangladesh were predominantly erected on monolithic architectures—predominantly WordPress, Drupal, or legacy LAMP (Linux, Apache, MySQL, PHP) stacks hosted on unmanaged cPanel shared servers. While these platforms were sufficient for basic static brochures in the early 2010s, modern commercial enterprises face vastly higher stakes today.",
         "As websites grow to encompass product catalogs, customer portals, interactive calculators, and corporate newsrooms, monolithic architectures inevitably degrade. Database queries multiply exponentially; third-party plugins conflict during updates; page weight expands to 8+ megabytes; and page render times stretch beyond 4 to 6 seconds on domestic 4G networks. In high-value sectors such as fintech, corporate legal consulting, and e-commerce, Google's official telemetry confirms that a 1-second delay in page load drops user conversion rates by up to 20%.",
         "Furthermore, monolithic systems intermingle the public presentation layer directly with the database and server administration layer. A single unpatched plugin vulnerability compromises the entire corporate database, exposing customer data and inviting disastrous defacement attacks.",
       ],

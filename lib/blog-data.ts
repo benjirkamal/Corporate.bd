@@ -9,10 +9,12 @@ import { post7PaymentGateways } from "./blog-data/post-7-payment-gateways"
 import { post8TaxVatCompliance } from "./blog-data/post-8-tax-vat-compliance"
 import { post9TrademarkProtection } from "./blog-data/post-9-trademark-protection"
 import { post10DoctorWebsite } from "./blog-data/post-10-doctor-website"
+import { post11EcommerceWebsite } from "./blog-data/post-11-ecommerce-website"
 
 export * from "./blog-data/types"
 
 const RAW_BLOG_POSTS: BlogPostDetail[] = [
+  post11EcommerceWebsite,
   post10DoctorWebsite,
   post1BdDomain,
   post2RjscCompany,
