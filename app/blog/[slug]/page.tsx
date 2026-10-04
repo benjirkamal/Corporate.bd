@@ -20,6 +20,7 @@ import {
   FileText,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { BlogFaqAccordion } from "@/components/blog-faq-accordion"
 import {
   getAllBlogPosts,
   getBlogPostBySlug,
@@ -376,35 +377,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 ))}
               </div>
 
-              {/* Frequently Asked Questions */}
+              {/* Frequently Asked Questions Dropdown Accordion */}
               {post.faqs.length > 0 && (
-                <div className="pt-8 border-t border-border space-y-6">
-                  <div className="space-y-1">
-                    <span className="text-xs font-bold uppercase tracking-wider text-accent">
-                      Common Queries
-                    </span>
-                    <h3 className="font-serif text-2xl font-bold text-foreground">
-                      Frequently Asked Questions
-                    </h3>
-                  </div>
-
-                  <div className="space-y-4">
-                    {post.faqs.map((faq, idx) => (
-                      <div
-                        key={idx}
-                        className="rounded-2xl border border-border bg-card p-5 space-y-2"
-                      >
-                        <h4 className="font-serif text-base font-bold text-foreground flex items-center gap-2">
-                          <HelpCircle className="h-4 w-4 text-primary shrink-0" />
-                          <span>{faq.question}</span>
-                        </h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed pl-6">
-                          {faq.answer}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                <BlogFaqAccordion
+                  faqs={post.faqs}
+                  className="pt-8 border-t border-border"
+                />
               )}
 
               {/* Author Bio Box */}

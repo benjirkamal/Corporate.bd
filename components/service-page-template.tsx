@@ -12,6 +12,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
+import { EcommercePortfolioShowcase } from "@/components/ecommerce-portfolio-showcase"
 import type { Service, ServiceCategory } from "@/lib/services-data"
 import { SITE_CONFIG } from "@/lib/site-config"
 
@@ -206,6 +207,15 @@ export function ServicePageTemplate({ service, category }: ServicePageTemplatePr
 
         </div>
       </section>
+
+      {/* Portfolio Showcase - Dedicated for Headless & E-Commerce Services */}
+      {service.portfolio && service.portfolio.length > 0 && (
+        <EcommercePortfolioShowcase
+          projects={service.portfolio}
+          heading={service.portfolioHeading}
+          subheading={service.portfolioSubheading}
+        />
+      )}
 
       {/* Features - rest of your code stays exactly same */}
       <section className="bg-muted/40 border-y border-border">
